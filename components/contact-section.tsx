@@ -56,7 +56,11 @@ export function ContactSection() {
             </div>
             <div>
               <dt className="font-display text-[0.65rem] uppercase tracking-[0.3em] text-white/60">Location</dt>
-              <dd className="mt-1 text-lg font-semibold">Aalto University, Espoo, Finland</dd>
+              <dd className="mt-1 text-lg font-semibold">Otakaari 4, Espoo, Finland</dd>
+            </div>
+            <div>
+              <dt className="font-display text-[0.65rem] uppercase tracking-[0.3em] text-white/60">Buisness ID</dt>
+              <dd className="mt-1 text-lg font-semibold">3081468-9</dd>
             </div>
           </dl>
         </div>
