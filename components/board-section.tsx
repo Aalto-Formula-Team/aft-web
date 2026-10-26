@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { SectionHeading } from '@/components/section-heading'
 
 const board = [
-  { name: 'Ignacio Wasowicz', role: 'Team Captain', photo: '/images/board/ignacio-wasowicz.jpg' },
+  { name: 'Ignacio Wąsowicz-Peinado', role: 'Team Captain', photo: '/images/board/ignacio-wasowicz.jpg' },
   { name: 'Dominika Holásková', role: 'Technical Manager', photo: '/images/board/dominika-holaskova.jpg' },
   { name: 'Khanh Hoang', role: 'Operations Manager', photo: '/images/board/khanh-hoang.jpg' },
   { name: 'Anssi Lampinen', role: 'Sponsorship Manager', photo: '/images/board/anssi-lampinen.jpg' },
