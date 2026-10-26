@@ -24,10 +24,10 @@ const milestones = [
 
 export function RoadmapSection() {
   return (
-    <section id="roadmap" className="scroll-mt-20 bg-muted py-24 lg:py-32">
+    <section id="roadmap" className="scroll-mt-20 bg-background py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-end">
-          <SectionHeading eyebrow="02 — Our Roadmap" title="Design. Build. Race." />
+          <SectionHeading eyebrow="03 — Our Roadmap" title="Design. Build. Race." />
           <p className="max-w-xl text-pretty text-lg leading-relaxed text-muted-foreground">
             A structured, milestone-driven plan from blank page to starting grid. Every phase is an opportunity for
             partners to get involved — and to be seen.
@@ -43,7 +43,7 @@ export function RoadmapSection() {
                   className={
                     active
                       ? 'relative z-10 flex size-12 shrink-0 items-center justify-center bg-brand text-white'
-                      : 'relative z-10 flex size-12 shrink-0 items-center justify-center border border-brand bg-muted text-brand'
+                      : 'relative z-10 flex size-12 shrink-0 items-center justify-center border border-brand bg-background text-brand'
                   }
                 >
                   <m.icon className="size-5" aria-hidden="true" />

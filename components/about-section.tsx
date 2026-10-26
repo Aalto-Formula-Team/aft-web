@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { Boxes, CircuitBoard, Handshake, Megaphone, Waypoints, Landmark } from 'lucide-react'
+import { Boxes, CircuitBoard, Handshake, Megaphone, Waypoints, Users } from 'lucide-react'
 import { SectionHeading } from '@/components/section-heading'
 
 const subTeams = [
@@ -74,12 +74,11 @@ export function AboutSection() {
         <div className="mt-16 border border-border">
           <div className="flex flex-col gap-4 border-b border-border bg-brand p-8 text-white sm:flex-row sm:items-center sm:justify-between">
             <div className="flex items-center gap-4">
-              <Landmark className="size-6" aria-hidden="true" />
-              <h3 className="text-xl font-bold uppercase tracking-wide">The Board</h3>
+              <Users className="size-6" aria-hidden="true" />
+              <h3 className="text-xl font-bold uppercase tracking-wide">Our Teams</h3>
             </div>
             <p className="max-w-xl text-sm leading-relaxed text-white/80">
-              Sets strategy, owns the budget and coordinates the sub-teams so engineering and business decisions move
-              together.
+              Five specialized sub-teams, each led by its own members and coordinated by the Board.
             </p>
           </div>
           <ul className="grid sm:grid-cols-2 lg:grid-cols-5">

@@ -2,10 +2,8 @@ import { AftLogo } from '@/components/aft-logo'
 import { navLinks } from '@/lib/site'
 
 const socials = [
-  { label: 'Instagram', short: 'IG', href: '#' },
-  { label: 'LinkedIn', short: 'IN', href: '#' },
-  { label: 'YouTube', short: 'YT', href: '#' },
-  { label: 'TikTok', short: 'TT', href: '#' },
+  { label: 'Instagram', short: 'IG', href: 'https://www.instagram.com/aaltoformulateam/' },
+  { label: 'LinkedIn', short: 'IN', href: 'https://www.linkedin.com/company/aaltoformulateam' },
 ]
 
 export function SiteFooter() {
@@ -39,6 +37,8 @@ export function SiteFooter() {
               <li key={s.label}>
                 <a
                   href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={s.label}
                   className="flex size-11 items-center justify-center border border-white/30 font-display text-xs transition-colors hover:border-white hover:bg-white hover:text-brand"
                 >

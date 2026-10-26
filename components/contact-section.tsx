@@ -44,7 +44,7 @@ export function ContactSection() {
     <section id="contact" className="scroll-mt-20 bg-brand py-24 text-white lg:py-32">
       <div className="mx-auto grid max-w-7xl gap-16 px-6 lg:grid-cols-[1fr_1.2fr] lg:px-10">
         <div>
-          <SectionHeading eyebrow="04 — Contact" title="Start the conversation." tone="light" />
+          <SectionHeading eyebrow="05 — Contact" title="Start the conversation." tone="light" />
           <p className="mt-8 max-w-md text-pretty text-lg leading-relaxed text-white/80">
             Interested in becoming a founding partner? Tell us a little about your organization and we&apos;ll get back
             to you with our partnership deck.
@@ -52,14 +52,18 @@ export function ContactSection() {
           <dl className="mt-12 flex flex-col gap-6 border-t border-white/20 pt-8">
             <div>
               <dt className="font-display text-[0.65rem] uppercase tracking-[0.3em] text-white/60">Email</dt>
-              <dd className="mt-1 text-lg font-semibold">partners@aaltoformula.fi</dd>
+              <dd className="mt-1 text-lg font-semibold">
+                <a href="mailto:aaltoformulateam@gmail.com" className="underline-offset-4 hover:underline">
+                  aaltoformulateam@gmail.com
+                </a>
+              </dd>
             </div>
             <div>
               <dt className="font-display text-[0.65rem] uppercase tracking-[0.3em] text-white/60">Location</dt>
               <dd className="mt-1 text-lg font-semibold">Otakaari 4, Espoo, Finland</dd>
             </div>
             <div>
-              <dt className="font-display text-[0.65rem] uppercase tracking-[0.3em] text-white/60">Buisness ID</dt>
+              <dt className="font-display text-[0.65rem] uppercase tracking-[0.3em] text-white/60">Business ID</dt>
               <dd className="mt-1 text-lg font-semibold">3081468-9</dd>
             </div>
           </dl>

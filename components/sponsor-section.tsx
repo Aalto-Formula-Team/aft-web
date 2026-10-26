@@ -31,9 +31,9 @@ const pillars = [
 
 export function SponsorSection() {
   return (
-    <section id="sponsor" className="scroll-mt-20 bg-background py-24 lg:py-32">
+    <section id="sponsor" className="scroll-mt-20 bg-muted py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <SectionHeading eyebrow="03 — Sponsor Value" title="Why partner with us?" className="max-w-3xl" />
+        <SectionHeading eyebrow="04 — Sponsor Value" title="Why partner with us?" className="max-w-3xl" />
 
         <div className="mt-16 grid gap-6 lg:grid-cols-2">
           {pillars.map((p, i) => (

@@ -15,12 +15,12 @@ export function SiteHeader() {
           <AftLogo />
         </a>
 
-        <nav aria-label="Primary" className="hidden items-center gap-10 lg:flex">
+        <nav aria-label="Primary" className="hidden items-center gap-8 xl:flex">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="relative text-xs font-semibold uppercase tracking-[0.2em] text-white/85 transition-colors after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-0 after:bg-white after:transition-all hover:text-white hover:after:w-full"
+              className="relative whitespace-nowrap text-xs font-semibold uppercase tracking-[0.2em] text-white/85 transition-colors after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-0 after:bg-white after:transition-all hover:text-white hover:after:w-full"
             >
               {link.label}
             </a>
@@ -30,13 +30,13 @@ export function SiteHeader() {
         <div className="flex items-center gap-3">
           <a
             href="#contact"
-            className="hidden border border-white bg-white px-5 py-3 text-xs font-bold uppercase tracking-[0.18em] text-brand transition-colors hover:bg-transparent hover:text-white sm:inline-block"
+            className="hidden whitespace-nowrap border border-white bg-white px-5 py-3 text-xs font-bold uppercase tracking-[0.18em] text-brand transition-colors hover:bg-transparent hover:text-white sm:inline-block"
           >
             Partner With Us
           </a>
           <button
             type="button"
-            className="inline-flex size-10 items-center justify-center text-white lg:hidden"
+            className="inline-flex size-10 items-center justify-center text-white xl:hidden"
             aria-expanded={open}
             aria-controls="mobile-nav"
             onClick={() => setOpen((v) => !v)}
@@ -48,7 +48,7 @@ export function SiteHeader() {
       </div>
 
       {open && (
-        <nav id="mobile-nav" aria-label="Mobile" className="border-t border-white/15 bg-brand px-6 pb-6 lg:hidden">
+        <nav id="mobile-nav" aria-label="Mobile" className="border-t border-white/15 bg-brand px-6 pb-6 xl:hidden">
           <ul className="flex flex-col">
             {navLinks.map((link) => (
               <li key={link.href}>
