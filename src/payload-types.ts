@@ -1701,6 +1701,20 @@ export interface Footer {
         id?: string | null;
       }[]
     | null;
+  tagline?: string | null;
+  socials?:
+    | {
+        label: string;
+        /**
+         * Two-letter abbreviation shown in the footer button, e.g. IG.
+         */
+        short: string;
+        url: string;
+        id?: string | null;
+      }[]
+    | null;
+  copyright?: string | null;
+  affiliation?: string | null;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -1755,6 +1769,17 @@ export interface FooterSelect<T extends boolean = true> {
             };
         id?: T;
       };
+  tagline?: T;
+  socials?:
+    | T
+    | {
+        label?: T;
+        short?: T;
+        url?: T;
+        id?: T;
+      };
+  copyright?: T;
+  affiliation?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;
