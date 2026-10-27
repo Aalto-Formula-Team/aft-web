@@ -1,29 +1,28 @@
-import clsx from 'clsx'
 import React from 'react'
 
-interface Props {
-  className?: string
-  loading?: 'lazy' | 'eager'
-  priority?: 'auto' | 'high' | 'low'
-}
+import { cn } from '@/utilities/ui'
 
-export const Logo = (props: Props) => {
-  const { loading: loadingFromProps, priority: priorityFromProps, className } = props
+export const AftMonogram = ({ className }: { className?: string }) => (
+  <svg viewBox="500 485 550 215" fill="currentColor" aria-hidden="true" className={className}>
+    <polygon points="610,487 716,698 674,698 610,573 549,698 504,698" />
+    <polygon points="661,487 1048,487 1028,523 961,523 961,698 924,698 924,523 681,523" />
+    <polygon points="696,561 873,561 873,598 760,598 818,696 774,696" />
+  </svg>
+)
 
-  const loading = loadingFromProps || 'lazy'
-  const priority = priorityFromProps || 'low'
-
-  return (
-    /* eslint-disable @next/next/no-img-element */
-    <img
-      alt="Payload Logo"
-      width={193}
-      height={34}
-      loading={loading}
-      fetchPriority={priority}
-      decoding="async"
-      className={clsx('max-w-[9.375rem] w-full h-[34px]', className)}
-      src="https://raw.githubusercontent.com/payloadcms/payload/main/packages/ui/src/assets/payload-logo-light.svg"
-    />
-  )
-}
+export const Logo = ({ className, size = 'md' }: { className?: string; size?: 'md' | 'lg' }) => (
+  <span className={cn('flex items-center gap-3 text-white', className)}>
+    <AftMonogram className={size === 'lg' ? 'h-12 w-auto' : 'h-8 w-auto'} />
+    <span
+      className={cn(
+        'font-display font-normal uppercase leading-[1.05] tracking-[0.18em]',
+        size === 'lg' ? 'text-sm' : 'text-[0.6rem]',
+      )}
+    >
+      <span className="block">Aalto</span>
+      <span className="block">Formula</span>
+      <span className="block">Team</span>
+    </span>
+    <span className="sr-only">Aalto Formula Team</span>
+  </span>
+)
