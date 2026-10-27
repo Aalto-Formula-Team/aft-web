@@ -8,6 +8,7 @@ import { Content } from '../../blocks/Content/config'
 import { FormBlock } from '../../blocks/Form/config'
 import { MediaBlock } from '../../blocks/MediaBlock/config'
 import { Roadmap } from '../../blocks/Roadmap/config'
+import { SponsorValue } from '../../blocks/SponsorValue/config'
 import { TeamOverview } from '../../blocks/TeamOverview/config'
 import { hero } from '@/heros/config'
 import { slugField } from 'payload'
@@ -77,6 +78,7 @@ export const Pages: CollectionConfig<'pages'> = {
               blocks: [
                 TeamOverview,
                 Roadmap,
+                SponsorValue,
                 CallToAction,
                 Content,
                 MediaBlock,
