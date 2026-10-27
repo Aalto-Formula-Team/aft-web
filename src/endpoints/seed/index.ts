@@ -41,6 +41,24 @@ export const seed = async ({
   // the custom `/api/seed` endpoint does not
   payload.logger.info(`— Clearing collections...`)
 
+  // Delete media through the Local API so the storage adapter also removes the stored files.
+  // Re-uploading a filename that still exists in Vercel Blob fails. Documents are deleted one at
+  // a time (and without `req`) because parallel deletes on a pooled Postgres connection can
+  // silently leave documents behind.
+  const existingMedia = await payload.find({
+    collection: 'media',
+    depth: 0,
+    limit: 0,
+    pagination: false,
+  })
+  for (const doc of existingMedia.docs) {
+    await payload.delete({ collection: 'media', id: doc.id, depth: 0 })
+  }
+  const remainingMedia = await payload.count({ collection: 'media' })
+  if (remainingMedia.totalDocs > 0) {
+    throw new Error(`Failed to clear media: ${remainingMedia.totalDocs} documents remain`)
+  }
+
   // clear the database (globals are overwritten below)
   await Promise.all(
     collections.map((collection) => payload.db.deleteMany({ collection, req, where: {} })),
@@ -62,23 +80,22 @@ export const seed = async ({
     fetchFileByURL(`${baseURL}/images/team-laptops.png`),
   ])
 
-  const [heroImage, whiteboardImage, laptopsImage] = await Promise.all([
-    payload.create({
-      collection: 'media',
-      data: { alt: 'Abstract line drawing of a Formula Student race car' },
-      file: heroBuffer,
-    }),
-    payload.create({
-      collection: 'media',
-      data: { alt: 'Students sketching chassis concepts together at a whiteboard' },
-      file: whiteboardBuffer,
-    }),
-    payload.create({
-      collection: 'media',
-      data: { alt: 'Students reviewing suspension CAD models on laptops' },
-      file: laptopsBuffer,
-    }),
-  ])
+  // Created one at a time: concurrent uploads on a pooled Postgres connection can roll each other back
+  const heroImage = await payload.create({
+    collection: 'media',
+    data: { alt: 'Abstract line drawing of a Formula Student race car' },
+    file: heroBuffer,
+  })
+  const whiteboardImage = await payload.create({
+    collection: 'media',
+    data: { alt: 'Students sketching chassis concepts together at a whiteboard' },
+    file: whiteboardBuffer,
+  })
+  const laptopsImage = await payload.create({
+    collection: 'media',
+    data: { alt: 'Students reviewing suspension CAD models on laptops' },
+    file: laptopsBuffer,
+  })
 
   payload.logger.info(`— Seeding inquiry form...`)
 
