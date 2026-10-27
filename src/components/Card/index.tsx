@@ -35,6 +35,7 @@ export const Card: React.FC<{
         'border border-border rounded-lg overflow-hidden bg-card hover:cursor-pointer',
         className,
       )}
+      // eslint-disable-next-line react-hooks/refs -- refs are passed to elements, not read
       ref={card.ref}
     >
       <div className="relative w-full ">
@@ -67,6 +68,7 @@ export const Card: React.FC<{
         {titleToUse && (
           <div className="prose">
             <h3>
+              {/* eslint-disable-next-line react-hooks/refs -- refs are passed to elements, not read */}
               <Link className="not-prose" href={href} ref={link.ref}>
                 {titleToUse}
               </Link>

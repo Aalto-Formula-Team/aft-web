@@ -1,8 +1,7 @@
 'use client'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 import type { Header } from '@/payload-types'
 
@@ -16,13 +15,8 @@ interface HeaderClientProps {
 
 export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
   const [open, setOpen] = useState(false)
-  const pathname = usePathname()
   const navItems = data?.navItems || []
   const close = () => setOpen(false)
-
-  useEffect(() => {
-    setOpen(false)
-  }, [pathname])
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/15 bg-brand">
