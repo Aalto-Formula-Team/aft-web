@@ -7,11 +7,13 @@ import { CallToActionBlock } from '@/blocks/CallToAction/Component'
 import { ContentBlock } from '@/blocks/Content/Component'
 import { FormBlock } from '@/blocks/Form/Component'
 import { MediaBlock } from '@/blocks/MediaBlock/Component'
+import { ContactBlock } from '@/blocks/Contact/Component'
 import { RoadmapBlock } from '@/blocks/Roadmap/Component'
 import { SponsorValueBlock } from '@/blocks/SponsorValue/Component'
 import { TeamOverviewBlock } from '@/blocks/TeamOverview/Component'
 
 const blockComponents = {
+  contact: ContactBlock,
   archive: ArchiveBlock,
   content: ContentBlock,
   cta: CallToActionBlock,
@@ -23,7 +25,7 @@ const blockComponents = {
 }
 
 // Sections that bring their own full-bleed background and spacing.
-const fullBleed = new Set(['teamOverview', 'roadmap', 'sponsorValue'])
+const fullBleed = new Set(['teamOverview', 'roadmap', 'sponsorValue', 'contact'])
 
 export const RenderBlocks: React.FC<{
   blocks: Page['layout'][0][]

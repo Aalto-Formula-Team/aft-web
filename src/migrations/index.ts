@@ -5,6 +5,7 @@ import * as migration_20261027_162417_hero_eyebrow from './20261027_162417_hero_
 import * as migration_20261027_162503_block_team_overview from './20261027_162503_block_team_overview';
 import * as migration_20261027_162550_block_roadmap from './20261027_162550_block_roadmap';
 import * as migration_20261027_163126_block_sponsor_value from './20261027_163126_block_sponsor_value';
+import * as migration_20261027_163300_block_contact from './20261027_163300_block_contact';
 
 export const migrations = [
   {
@@ -40,6 +41,11 @@ export const migrations = [
   {
     up: migration_20261027_163126_block_sponsor_value.up,
     down: migration_20261027_163126_block_sponsor_value.down,
-    name: '20261027_163126_block_sponsor_value'
+    name: '20261027_163126_block_sponsor_value',
+  },
+  {
+    up: migration_20261027_163300_block_contact.up,
+    down: migration_20261027_163300_block_contact.down,
+    name: '20261027_163300_block_contact'
   },
 ];

@@ -7,6 +7,7 @@ import { CallToAction } from '../../blocks/CallToAction/config'
 import { Content } from '../../blocks/Content/config'
 import { FormBlock } from '../../blocks/Form/config'
 import { MediaBlock } from '../../blocks/MediaBlock/config'
+import { Contact } from '../../blocks/Contact/config'
 import { Roadmap } from '../../blocks/Roadmap/config'
 import { SponsorValue } from '../../blocks/SponsorValue/config'
 import { TeamOverview } from '../../blocks/TeamOverview/config'
@@ -79,6 +80,7 @@ export const Pages: CollectionConfig<'pages'> = {
                 TeamOverview,
                 Roadmap,
                 SponsorValue,
+                Contact,
                 CallToAction,
                 Content,
                 MediaBlock,
