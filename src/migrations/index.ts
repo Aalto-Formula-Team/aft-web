@@ -3,6 +3,7 @@ import * as migration_20261027_162259_header_cta from './20261027_162259_header_
 import * as migration_20261027_162334_footer_fields from './20261027_162334_footer_fields';
 import * as migration_20261027_162417_hero_eyebrow from './20261027_162417_hero_eyebrow';
 import * as migration_20261027_162503_block_team_overview from './20261027_162503_block_team_overview';
+import * as migration_20261027_162550_block_roadmap from './20261027_162550_block_roadmap';
 
 export const migrations = [
   {
@@ -28,6 +29,11 @@ export const migrations = [
   {
     up: migration_20261027_162503_block_team_overview.up,
     down: migration_20261027_162503_block_team_overview.down,
-    name: '20261027_162503_block_team_overview'
+    name: '20261027_162503_block_team_overview',
+  },
+  {
+    up: migration_20261027_162550_block_roadmap.up,
+    down: migration_20261027_162550_block_roadmap.down,
+    name: '20261027_162550_block_roadmap'
   },
 ];

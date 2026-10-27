@@ -202,7 +202,9 @@ export interface Page {
       | null;
     media?: (number | null) | Media;
   };
-  layout: (TeamOverviewBlock | CallToActionBlock | ContentBlock | MediaBlock | ArchiveBlock | FormBlock)[];
+  layout: (
+    TeamOverviewBlock | RoadmapBlock | CallToActionBlock | ContentBlock | MediaBlock | ArchiveBlock | FormBlock
+  )[];
   meta?: {
     title?: string | null;
     /**
@@ -484,6 +486,56 @@ export interface TeamOverviewBlock {
   id?: string | null;
   blockName?: string | null;
   blockType: 'teamOverview';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "RoadmapBlock".
+ */
+export interface RoadmapBlock {
+  /**
+   * Used as the section id so nav links like "#about" can scroll to it.
+   */
+  anchorId?: string | null;
+  sectionHeader?: {
+    eyebrow?: string | null;
+    title?: string | null;
+    intro?: string | null;
+  };
+  milestones?:
+    | {
+        phase: string;
+        icon?:
+          | (
+              | 'boxes'
+              | 'circuitBoard'
+              | 'waypoints'
+              | 'handshake'
+              | 'megaphone'
+              | 'landmark'
+              | 'pencilRuler'
+              | 'wrench'
+              | 'flag'
+              | 'network'
+              | 'brandBadge'
+            )
+          | null;
+        status?: string | null;
+        /**
+         * Highlights this milestone as the current phase.
+         */
+        active?: boolean | null;
+        items?:
+          | {
+              text: string;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'roadmap';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1132,6 +1184,7 @@ export interface PagesSelect<T extends boolean = true> {
     | T
     | {
         teamOverview?: T | TeamOverviewBlockSelect<T>;
+        roadmap?: T | RoadmapBlockSelect<T>;
         cta?: T | CallToActionBlockSelect<T>;
         content?: T | ContentBlockSelect<T>;
         mediaBlock?: T | MediaBlockSelect<T>;
@@ -1178,6 +1231,37 @@ export interface TeamOverviewBlockSelect<T extends boolean = true> {
         name?: T;
         icon?: T;
         description?: T;
+        id?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "RoadmapBlock_select".
+ */
+export interface RoadmapBlockSelect<T extends boolean = true> {
+  anchorId?: T;
+  sectionHeader?:
+    | T
+    | {
+        eyebrow?: T;
+        title?: T;
+        intro?: T;
+      };
+  milestones?:
+    | T
+    | {
+        phase?: T;
+        icon?: T;
+        status?: T;
+        active?: T;
+        items?:
+          | T
+          | {
+              text?: T;
+              id?: T;
+            };
         id?: T;
       };
   id?: T;
