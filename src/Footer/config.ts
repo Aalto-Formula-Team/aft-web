@@ -40,7 +40,9 @@ export const Footer: GlobalConfig = {
           name: 'short',
           type: 'text',
           required: true,
-          admin: { description: 'Two-letter abbreviation shown in the footer button, e.g. IG.' },
+          admin: {
+            description: 'Two-letter abbreviation shown in the footer button, e.g. IG.',
+          },
         },
         { name: 'url', type: 'text', required: true },
       ],

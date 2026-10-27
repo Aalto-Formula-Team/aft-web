@@ -34,7 +34,9 @@ export const HighImpactHero: React.FC<Page['hero']> = ({ eyebrow, links, media, 
 
       <div className="mx-auto w-full max-w-7xl px-6 py-24 lg:px-10">
         {eyebrow && (
-          <p className="font-display text-xs uppercase tracking-[0.35em] text-white/75">{eyebrow}</p>
+          <p className="font-display text-xs uppercase tracking-[0.35em] text-white/75">
+            {eyebrow}
+          </p>
         )}
         {richText && (
           <RichText

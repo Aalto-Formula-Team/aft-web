@@ -202,7 +202,7 @@ export interface Page {
       | null;
     media?: (number | null) | Media;
   };
-  layout: (CallToActionBlock | ContentBlock | MediaBlock | ArchiveBlock | FormBlock)[];
+  layout: (TeamOverviewBlock | CallToActionBlock | ContentBlock | MediaBlock | ArchiveBlock | FormBlock)[];
   meta?: {
     title?: string | null;
     /**
@@ -439,6 +439,51 @@ export interface User {
     | null;
   password?: string | null;
   collection: 'users';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TeamOverviewBlock".
+ */
+export interface TeamOverviewBlock {
+  /**
+   * Used as the section id so nav links like "#about" can scroll to it.
+   */
+  anchorId?: string | null;
+  sectionHeader?: {
+    eyebrow?: string | null;
+    title?: string | null;
+    intro?: string | null;
+  };
+  images?: (number | Media)[] | null;
+  board?: {
+    title?: string | null;
+    description?: string | null;
+  };
+  subTeams?:
+    | {
+        name: string;
+        icon?:
+          | (
+              | 'boxes'
+              | 'circuitBoard'
+              | 'waypoints'
+              | 'handshake'
+              | 'megaphone'
+              | 'landmark'
+              | 'pencilRuler'
+              | 'wrench'
+              | 'flag'
+              | 'network'
+              | 'brandBadge'
+            )
+          | null;
+        description?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'teamOverview';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1086,6 +1131,7 @@ export interface PagesSelect<T extends boolean = true> {
   layout?:
     | T
     | {
+        teamOverview?: T | TeamOverviewBlockSelect<T>;
         cta?: T | CallToActionBlockSelect<T>;
         content?: T | ContentBlockSelect<T>;
         mediaBlock?: T | MediaBlockSelect<T>;
@@ -1105,6 +1151,37 @@ export interface PagesSelect<T extends boolean = true> {
   updatedAt?: T;
   createdAt?: T;
   _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TeamOverviewBlock_select".
+ */
+export interface TeamOverviewBlockSelect<T extends boolean = true> {
+  anchorId?: T;
+  sectionHeader?:
+    | T
+    | {
+        eyebrow?: T;
+        title?: T;
+        intro?: T;
+      };
+  images?: T;
+  board?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+      };
+  subTeams?:
+    | T
+    | {
+        name?: T;
+        icon?: T;
+        description?: T;
+        id?: T;
+      };
+  id?: T;
+  blockName?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
