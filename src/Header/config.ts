@@ -25,6 +25,10 @@ export const Header: GlobalConfig = {
         },
       },
     },
+    link({
+      appearances: false,
+      overrides: { name: 'cta', label: 'Call to action' },
+    }),
   ],
   hooks: {
     afterChange: [revalidateHeader],
