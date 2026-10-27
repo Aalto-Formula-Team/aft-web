@@ -53,7 +53,7 @@ export const HighImpactHero: React.FC<Page['hero']> = ({ eyebrow, links, media, 
           <ul className="mt-12 flex flex-col gap-4 sm:flex-row">
             {links.map(({ link }, i) => (
               <li key={i}>
-                <CMSLink {...link} className={linkClass[i] ?? linkClass[1]} />
+                <CMSLink {...link} appearance="inline" className={linkClass[i] ?? linkClass[1]} />
               </li>
             ))}
           </ul>
