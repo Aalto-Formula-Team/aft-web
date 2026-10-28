@@ -2,11 +2,36 @@ import Image from 'next/image'
 import { SectionHeading } from '@/components/section-heading'
 
 const board = [
-  { name: 'Ignacio Wąsowicz-Peinado', role: 'Team Captain', photo: '/images/board/ignacio-wasowicz.jpg' },
-  { name: 'Dominika Holásková', role: 'Technical Manager', photo: '/images/board/dominika-holaskova.jpg' },
-  { name: 'Khanh Hoang', role: 'Operations Manager', photo: '/images/board/khanh-hoang.jpg' },
-  { name: 'Anssi Lampinen', role: 'Sponsorship Manager', photo: '/images/board/anssi-lampinen.jpg' },
-  { name: 'Jacky Zijin Ji', role: 'Marketing Manager', photo: '/images/board/jacky-zijin-ji.jpg' },
+  {
+    name: 'Ignacio Wąsowicz-Peinado',
+    role: 'Team Captain',
+    photo: '/images/board/ignacio-wasowicz.jpg',
+    description: 'Leads the team, sets its overall direction and represents AFT towards the university and partners.',
+  },
+  {
+    name: 'Dominika Holásková',
+    role: 'Technical Manager',
+    photo: '/images/board/dominika-holaskova.jpg',
+    description: 'Oversees the engineering sub-teams and makes sure every system comes together as one car.',
+  },
+  {
+    name: 'Khanh Hoang',
+    role: 'Operations Manager',
+    photo: '/images/board/khanh-hoang.jpg',
+    description: "Runs day-to-day operations — planning, finances, logistics and the association's administration.",
+  },
+  {
+    name: 'Anssi Lampinen',
+    role: 'Sponsorship Manager',
+    photo: '/images/board/anssi-lampinen.jpg',
+    description: 'Builds and maintains our partnerships and secures the resources the team needs to build and race.',
+  },
+  {
+    name: 'Jacky Zijin Ji',
+    role: 'Marketing Manager',
+    photo: '/images/board/jacky-zijin-ji.jpg',
+    description: "Manages the team's brand, social media and communication with students, partners and fans.",
+  },
 ]
 
 export function BoardSection() {
@@ -14,7 +39,7 @@ export function BoardSection() {
     <section id="board" className="scroll-mt-20 bg-muted py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-end">
-          <SectionHeading eyebrow="02 — The Board" title="The people behind the team." />
+          <SectionHeading eyebrow="01 — The Board" title="The people behind the team." />
           <p className="max-w-xl text-pretty text-lg leading-relaxed text-muted-foreground">
             The Board sets strategy, owns the budget and coordinates the sub-teams so engineering and business
             decisions move together.
@@ -38,6 +63,7 @@ export function BoardSection() {
                   {member.role}
                 </span>
                 <h3 className="text-base font-bold uppercase tracking-wide sm:text-lg">{member.name}</h3>
+                <p className="text-xs leading-relaxed text-muted-foreground sm:text-sm">{member.description}</p>
               </div>
             </li>
           ))}

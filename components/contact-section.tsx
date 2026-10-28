@@ -44,12 +44,17 @@ export function ContactSection() {
     <section id="contact" className="scroll-mt-20 bg-brand py-24 text-white lg:py-32">
       <div className="mx-auto grid max-w-7xl gap-16 px-6 lg:grid-cols-[1fr_1.2fr] lg:px-10">
         <div>
-          <SectionHeading eyebrow="05 — Contact" title="Start the conversation." tone="light" />
+          <SectionHeading eyebrow="02 — Contact" title="Start the conversation." tone="light" />
           <p className="mt-8 max-w-md text-pretty text-lg leading-relaxed text-white/80">
             Interested in becoming a founding partner? Tell us a little about your organization and we&apos;ll get back
             to you with our partnership deck.
           </p>
           <dl className="mt-12 flex flex-col gap-6 border-t border-white/20 pt-8">
+            <div>
+              <dt className="font-display text-[0.65rem] uppercase tracking-[0.3em] text-white/60">Association</dt>
+              <dd className="mt-1 text-lg font-semibold">Aalto Formula Team ry</dd>
+              <dd className="text-sm text-white/70">Registered non-profit association</dd>
+            </div>
             <div>
               <dt className="font-display text-[0.65rem] uppercase tracking-[0.3em] text-white/60">Email</dt>
               <dd className="mt-1 text-lg font-semibold">
@@ -65,6 +70,20 @@ export function ContactSection() {
             <div>
               <dt className="font-display text-[0.65rem] uppercase tracking-[0.3em] text-white/60">Business ID</dt>
               <dd className="mt-1 text-lg font-semibold">3081468-9</dd>
+            </div>
+            <div>
+              <dt className="font-display text-[0.65rem] uppercase tracking-[0.3em] text-white/60">Association Rules</dt>
+              <dd className="mt-1 text-lg font-semibold">
+                <a
+                  href="/documents/aft-association-rules.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-2 underline-offset-4 hover:underline"
+                >
+                  Read the rules (PDF)
+                  <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                </a>
+              </dd>
             </div>
           </dl>
         </div>

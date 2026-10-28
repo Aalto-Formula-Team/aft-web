@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 
 export function HeroSection() {
@@ -38,12 +39,12 @@ export function HeroSection() {
             Join Our Journey
             <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
           </a>
-          <a
-            href="#sponsor"
+          <Link
+            href="/team"
             className="inline-flex items-center justify-center border border-white/50 px-8 py-4 text-sm font-bold uppercase tracking-[0.18em] text-white transition-colors hover:border-white hover:bg-white/10"
           >
-            Sponsor Value
-          </a>
+            Meet the Team
+          </Link>
         </div>
       </div>
 

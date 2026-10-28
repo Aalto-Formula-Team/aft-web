@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { AftLogo } from '@/components/aft-logo'
 import { navLinks } from '@/lib/site'
 
@@ -22,9 +23,9 @@ export function SiteFooter() {
           <ul className="mt-5 flex flex-col gap-3">
             {navLinks.map((l) => (
               <li key={l.href}>
-                <a href={l.href} className="text-sm font-semibold uppercase tracking-[0.15em] text-white/85 transition-colors hover:text-white">
+                <Link href={l.href} className="text-sm font-semibold uppercase tracking-[0.15em] text-white/85 transition-colors hover:text-white">
                   {l.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

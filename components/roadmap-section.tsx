@@ -6,6 +6,7 @@ const milestones = [
     phase: 'Design',
     icon: PencilRuler,
     status: 'In progress',
+    date: 'From 09/2026',
     items: ['Concept & rules analysis', 'CAD, simulation & FEA', 'Design reviews with partners'],
   },
   {
@@ -18,7 +19,8 @@ const milestones = [
     phase: 'Race',
     icon: Flag,
     status: 'Goal',
-    items: ['Technical inspection', 'Static & dynamic events', 'Formula Student competition'],
+    date: '08/2027 · FS Germany',
+    items: ['Technical inspection', 'Static & dynamic events', 'Formula Student Germany, Hockenheimring'],
   },
 ]
 
@@ -27,10 +29,11 @@ export function RoadmapSection() {
     <section id="roadmap" className="scroll-mt-20 bg-background py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-end">
-          <SectionHeading eyebrow="03 — Our Roadmap" title="Design. Build. Race." />
+          <SectionHeading eyebrow="03 — Our Timeline" title="Design. Build. Race." />
           <p className="max-w-xl text-pretty text-lg leading-relaxed text-muted-foreground">
-            A structured, milestone-driven plan from blank page to starting grid. Every phase is an opportunity for
-            partners to get involved — and to be seen.
+            A structured, milestone-driven plan from blank page to starting grid — from the start of design in
+            September 2026 to our first race at Formula Student Germany in August 2027. Every phase is an opportunity
+            for partners to get involved — and to be seen.
           </p>
         </div>
 
@@ -64,6 +67,9 @@ export function RoadmapSection() {
                     </span>
                   </div>
                   <h3 className="mt-4 text-3xl font-extrabold uppercase tracking-tight">{m.phase}</h3>
+                  {'date' in m && (
+                    <p className="mt-2 font-display text-xs uppercase tracking-[0.3em] text-brand">{m.date}</p>
+                  )}
                   <ul className="mt-5 flex flex-col gap-3">
                     {m.items.map((item) => (
                       <li key={item} className="flex items-center gap-3 text-sm text-muted-foreground">

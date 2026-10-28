@@ -1,53 +1,33 @@
 import Image from 'next/image'
-import { Boxes, CircuitBoard, Handshake, Megaphone, Waypoints, Users } from 'lucide-react'
 import { SectionHeading } from '@/components/section-heading'
-
-const subTeams = [
-  {
-    name: 'Chassis',
-    icon: Boxes,
-    description:
-      'Designs the frame, bodywork and aerodynamics — the structural backbone every other system is built around.',
-  },
-  {
-    name: 'Electrical',
-    icon: CircuitBoard,
-    description:
-      'Develops the wiring harness, sensors, data acquisition and control electronics that bring the car to life.',
-  },
-  {
-    name: 'Suspension',
-    icon: Waypoints,
-    description:
-      'Engineers kinematics, uprights and dampers to translate power into grip, stability and lap time.',
-  },
-  {
-    name: 'Corporate Relations',
-    icon: Handshake,
-    description:
-      'Builds long-term partnerships with industry, manages sponsor value and secures the resources we race on.',
-  },
-  {
-    name: 'Marketing',
-    icon: Megaphone,
-    description:
-      "Owns the team's brand, content and channels — amplifying our partners to university and motorsport audiences.",
-  },
-]
 
 export function AboutSection() {
   return (
     <section id="about" className="scroll-mt-20 bg-background py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="grid gap-12 lg:grid-cols-2 lg:items-end">
+        <div className="grid gap-12 lg:grid-cols-2">
           <SectionHeading
-            eyebrow="01 — About Us"
+            eyebrow="01 — Who We Are"
             title="One team. Five disciplines. A single goal."
           />
-          <p className="max-w-xl text-pretty text-lg leading-relaxed text-muted-foreground">
-            Aalto Formula Team is a newly founded, student-run organization at Aalto University. Guided by our Board,
-            five specialized sub-teams work in parallel to design, engineer and fund a competitive Formula Student car.
-          </p>
+          <div className="flex max-w-xl flex-col gap-6 text-pretty text-lg leading-relaxed text-muted-foreground">
+            <p>
+              Aalto Formula Team (AFT) is a student-run, non-profit association at Aalto University in Espoo, operating
+              within the Aalto University Student Union (AYY). Our purpose is to bring Aalto students together to
+              design, build and race a Formula Student car — and to grow the recognition of the competition in Finland
+              and at Aalto.
+            </p>
+            <p>
+              Guided by our Board, five sub-teams work in parallel: three engineer the car itself — chassis,
+              electrical and suspension — while two build the partnerships and communication that make the project
+              possible. Students from engineering, business and design all have a place on the team.
+            </p>
+            <p>
+              Beyond the car, we will organize events and excursions and work closely with companies, the university
+              and other student associations — giving our members hands-on experience they can&apos;t get in a
+              lecture hall.
+            </p>
+          </div>
         </div>
 
         <div className="mt-16 grid gap-4 sm:grid-cols-2">
@@ -71,36 +51,6 @@ export function AboutSection() {
           </div>
         </div>
 
-        <div className="mt-16 border border-border">
-          <div className="flex flex-col gap-4 border-b border-border bg-brand p-8 text-white sm:flex-row sm:items-center sm:justify-between">
-            <div className="flex items-center gap-4">
-              <Users className="size-6" aria-hidden="true" />
-              <h3 className="text-xl font-bold uppercase tracking-wide">Our Teams</h3>
-            </div>
-            <p className="max-w-xl text-sm leading-relaxed text-white/80">
-              Five specialized sub-teams, each led by its own members and coordinated by the Board.
-            </p>
-          </div>
-          <ul className="grid sm:grid-cols-2 lg:grid-cols-5">
-            {subTeams.map((team, i) => (
-              <li
-                key={team.name}
-                className="group flex flex-col gap-6 border-border p-8 transition-colors hover:bg-muted max-lg:border-b sm:odd:border-r lg:border-r lg:last:border-r-0"
-              >
-                <div className="flex items-center justify-between">
-                  <team.icon className="size-6 text-brand" aria-hidden="true" />
-                  <span className="font-display text-xs text-muted-foreground">
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
-                </div>
-                <div>
-                  <h4 className="text-lg font-bold uppercase tracking-wide">{team.name}</h4>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{team.description}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
       </div>
     </section>
   )
