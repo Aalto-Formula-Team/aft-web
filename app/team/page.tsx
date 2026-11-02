@@ -6,7 +6,7 @@ import { TeamStructureSection } from '@/components/team-structure-section'
 import { SiteFooter } from '@/components/site-footer'
 
 export const metadata: Metadata = {
-  title: 'Our Team — Aalto Formula Team',
+  title: 'Our Team | Aalto Formula Team',
   description: 'Meet the Board of Aalto Formula Team and see how our sub-teams are organized.',
 }
 

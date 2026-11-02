@@ -6,7 +6,7 @@ const board = [
     name: 'Ignacio Wąsowicz-Peinado',
     role: 'Team Captain',
     photo: '/images/board/ignacio-wasowicz.jpg',
-    description: 'Leads the team, sets its overall direction and represents AFT towards the university and partners.',
+    description: 'Leads the team, sets the direction and represents AFT to the university and our partners.',
   },
   {
     name: 'Dominika Holásková',
@@ -18,7 +18,7 @@ const board = [
     name: 'Khanh Hoang',
     role: 'Operations Manager',
     photo: '/images/board/khanh-hoang.jpg',
-    description: "Runs day-to-day operations — planning, finances, logistics and the association's administration.",
+    description: "Keeps things running day to day: planning, finances, logistics and the association's admin.",
   },
   {
     name: 'Anssi Lampinen',
@@ -41,8 +41,8 @@ export function BoardSection() {
         <div className="grid gap-12 lg:grid-cols-2 lg:items-end">
           <SectionHeading eyebrow="01 — The Board" title="The people behind the team." />
           <p className="max-w-xl text-pretty text-lg leading-relaxed text-muted-foreground">
-            The Board sets strategy, owns the budget and coordinates the sub-teams so engineering and business
-            decisions move together.
+            The Board sets the direction, manages the budget and keeps the sub-teams working together, so the
+            engineering and business sides stay in sync.
           </p>
         </div>
 

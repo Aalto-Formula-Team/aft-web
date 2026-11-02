@@ -6,7 +6,7 @@ import { ContactSection } from '@/components/contact-section'
 import { SiteFooter } from '@/components/site-footer'
 
 export const metadata: Metadata = {
-  title: 'Contact — Aalto Formula Team',
+  title: 'Contact | Aalto Formula Team',
   description: 'Get in touch with Aalto Formula Team ry, become a partner, and find our association details.',
 }
 

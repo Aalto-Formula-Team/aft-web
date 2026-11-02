@@ -25,11 +25,13 @@ export function HeroSection() {
         <p className="font-display text-xs uppercase tracking-[0.35em] text-white/75">
           Formula Student · Est. 2026
         </p>
-        <h1 className="mt-6 max-w-4xl text-balance text-4xl font-extrabold uppercase leading-[0.95] tracking-tight sm:text-6xl lg:text-7xl">
-          Aalto Formula Team: Built by students, powered by innovation.
+        {/* Font scales with the viewport so "Aalto Formula Team:" (~12.4em wide) always fits on one line */}
+        <h1 className="mt-6 max-w-5xl text-balance text-[length:min(4.5rem,calc((100vw_-_3rem)/12.4))] font-extrabold uppercase leading-[0.95] tracking-tight lg:text-[length:min(4.5rem,calc((100vw_-_5rem)/12.4))]">
+          <span className="block whitespace-nowrap">Aalto Formula Team:</span>
+          Built by students, powered by innovation.
         </h1>
         <p className="mt-8 max-w-xl text-pretty text-lg leading-relaxed text-white/85">
-          {"Finland’s future in motorsport starts here. We are designing, engineering, and building from the ground up."}
+          We&apos;re Aalto students designing and building our own race car from scratch, with our first race planned for summer 2027.
         </p>
         <div className="mt-12 flex flex-col gap-4 sm:flex-row">
           <a

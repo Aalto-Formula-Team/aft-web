@@ -31,9 +31,8 @@ export function RoadmapSection() {
         <div className="grid gap-12 lg:grid-cols-2 lg:items-end">
           <SectionHeading eyebrow="03 — Our Timeline" title="Design. Build. Race." />
           <p className="max-w-xl text-pretty text-lg leading-relaxed text-muted-foreground">
-            A structured, milestone-driven plan from blank page to starting grid — from the start of design in
-            September 2026 to our first race at Formula Student Germany in August 2027. Every phase is an opportunity
-            for partners to get involved — and to be seen.
+            Our plan from a blank page to the starting grid. Design starts in September 2026, and we&apos;re aiming
+            for our first race at Formula Student Germany in August 2027. Partners can get involved at every stage.
           </p>
         </div>
 

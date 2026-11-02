@@ -6,31 +6,31 @@ const subTeams = [
     name: 'Chassis',
     icon: Boxes,
     description:
-      'Designs the frame, bodywork and aerodynamics — the structural backbone every other system is built around.',
+      'Designs the frame, bodywork and aerodynamics. Every other part of the car is built around their work.',
   },
   {
     name: 'Electrical',
     icon: CircuitBoard,
     description:
-      'Develops the wiring harness, sensors, data acquisition and control electronics that bring the car to life.',
+      'Works on the wiring, sensors, data logging and control electronics that bring the car to life.',
   },
   {
     name: 'Suspension',
     icon: Waypoints,
     description:
-      'Engineers kinematics, uprights and dampers to translate power into grip, stability and lap time.',
+      'Works on the kinematics, uprights and dampers that turn power into grip, stability and faster laps.',
   },
   {
     name: 'Corporate Relations',
     icon: Handshake,
     description:
-      'Builds long-term partnerships with industry, manages sponsor value and secures the resources we race on.',
+      'Builds long-term partnerships with companies and makes sure we have what we need to race.',
   },
   {
     name: 'Marketing',
     icon: Megaphone,
     description:
-      "Owns the team's brand, content and channels — amplifying our partners to university and motorsport audiences.",
+      "Runs the team's brand, content and social media, and makes sure our partners get seen.",
   },
 ]
 
@@ -41,8 +41,8 @@ export function TeamStructureSection() {
         <div className="grid gap-12 lg:grid-cols-2 lg:items-end">
           <SectionHeading eyebrow="02 — Team Structure" title="How we are organized." />
           <p className="max-w-xl text-pretty text-lg leading-relaxed text-muted-foreground">
-            The Board leads five sub-teams that work in parallel — three on the engineering of the car and two on the
-            partnerships and communication that make it possible.
+            The Board leads five sub-teams that work side by side. Three work on the car, and two take care of
+            partnerships and communication.
           </p>
         </div>
 
@@ -53,7 +53,7 @@ export function TeamStructureSection() {
               <h3 className="text-xl font-bold uppercase tracking-wide">Our Teams</h3>
             </div>
             <p className="max-w-xl text-sm leading-relaxed text-white/80">
-              Five specialized sub-teams, each led by its own members and coordinated by the Board.
+              Five sub-teams, each run by its own members and coordinated by the Board.
             </p>
           </div>
           <ul className="grid sm:grid-cols-2 lg:grid-cols-5">

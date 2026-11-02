@@ -18,13 +18,13 @@ const pillars = [
   {
     title: 'Brand Recognition',
     icon: <BrandIcon />,
-    body: 'Secure prime logo placement on our website today — and on the physical car, team apparel and marketing materials as the build comes together. Reach a highly engaged university and motorsport audience from day one.',
+    body: 'Get your logo on our website now, and later on the car, our team clothing and our marketing as the build comes together. You will reach students and motorsport fans from day one.',
     points: ['Website placement now', 'Car livery & team apparel', 'Events, content & social'],
   },
   {
-    title: 'Battle-Tested Talent',
+    title: 'Future Talent',
     icon: <Network className="size-10" strokeWidth={1.5} aria-hidden="true" />,
-    body: 'Gain direct access to a pipeline of elite, hands-on students gaining practical, high-pressure experience in engineering and business — the future hires your organization is looking for.',
+    body: 'Meet motivated students who are getting real, hands-on experience in engineering and business. They could be your next hires.',
     points: ['Recruitment access', 'Workshops & tech talks', 'Real-world problem solving'],
   },
 ]
@@ -68,7 +68,7 @@ export function SponsorSection() {
 
         <div className="mt-12 flex flex-col items-start justify-between gap-6 border-l-2 border-brand pl-6 sm:flex-row sm:items-center">
           <p className="max-w-xl text-lg font-semibold">
-            Founding partners shape the team from the very first bolt. Let&apos;s build something together.
+            As a founding partner, you&apos;re with us from the very first bolt. Let&apos;s build something together.
           </p>
           <a
             href="#contact"

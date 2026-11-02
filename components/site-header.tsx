@@ -40,6 +40,13 @@ export function SiteHeader() {
 
         <div className="flex items-center gap-3">
           <Link
+            href="/join"
+            aria-current={pathname === '/join' ? 'page' : undefined}
+            className="hidden whitespace-nowrap border border-white/50 px-5 py-3 text-xs font-bold uppercase tracking-[0.18em] text-white transition-colors hover:border-white hover:bg-white/10 aria-[current=page]:border-white sm:inline-block"
+          >
+            Join Us
+          </Link>
+          <Link
             href="/contact#sponsor"
             className="hidden whitespace-nowrap border border-white bg-white px-5 py-3 text-xs font-bold uppercase tracking-[0.18em] text-brand transition-colors hover:bg-transparent hover:text-white sm:inline-block"
           >
@@ -74,13 +81,22 @@ export function SiteHeader() {
               </li>
             ))}
           </ul>
-          <Link
-            href="/contact#sponsor"
-            onClick={() => setOpen(false)}
-            className="mt-6 block bg-white px-5 py-4 text-center text-xs font-bold uppercase tracking-[0.18em] text-brand"
-          >
-            Partner With Us
-          </Link>
+          <div className="mt-6 grid gap-3 sm:grid-cols-2">
+            <Link
+              href="/join"
+              onClick={() => setOpen(false)}
+              className="block border border-white px-5 py-4 text-center text-xs font-bold uppercase tracking-[0.18em] text-white"
+            >
+              Join Us
+            </Link>
+            <Link
+              href="/contact#sponsor"
+              onClick={() => setOpen(false)}
+              className="block bg-white px-5 py-4 text-center text-xs font-bold uppercase tracking-[0.18em] text-brand"
+            >
+              Partner With Us
+            </Link>
+          </div>
         </nav>
       )}
     </header>

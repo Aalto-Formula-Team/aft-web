@@ -8,7 +8,7 @@ const events = [
   {
     title: 'Static Events',
     icon: NotebookPen,
-    body: 'Teams present and defend their work to industry judges — how the car was engineered, what it costs to build and how it could be brought to market.',
+    body: 'Teams present their work to judges from the industry. They explain how the car was engineered, what it costs to build and how it could be sold.',
     points: [
       { label: 'Engineering design', href: `${FSG_ABOUT}#c927` },
       { label: 'Cost & manufacturing', href: `${FSG_ABOUT}#c928` },
@@ -18,7 +18,7 @@ const events = [
   {
     title: 'Dynamic Events',
     icon: Gauge,
-    body: 'On track, the car is tested for straight-line speed, cornering, handling and reliability — finishing with a long endurance race where efficiency counts too.',
+    body: 'Out on the track, the car is tested on speed, cornering, handling and reliability. It all ends with a long endurance race, where energy efficiency counts too.',
     points: [
       { label: 'Acceleration & skid pad', href: `${FSG_ABOUT}#c933` },
       { label: 'Autocross', href: `${FSG_ABOUT}#c935` },
@@ -35,8 +35,8 @@ export function FormulaStudentSection() {
           <SectionHeading eyebrow="02 — Formula Student" title="What is Formula Student?" />
           <p className="max-w-xl text-pretty text-lg leading-relaxed text-muted-foreground">
             Formula Student is an international engineering competition for university students. Teams design, build
-            and race their own single-seat race car — and are judged not only on lap times, but on how well the whole
-            project is engineered and run.
+            and race their own single-seat race car. Lap times matter, but so does how well the whole project is
+            engineered and run.
           </p>
         </div>
 

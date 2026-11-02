@@ -12,20 +12,18 @@ export function AboutSection() {
           />
           <div className="flex max-w-xl flex-col gap-6 text-pretty text-lg leading-relaxed text-muted-foreground">
             <p>
-              Aalto Formula Team (AFT) is a student-run, non-profit association at Aalto University in Espoo, operating
-              within the Aalto University Student Union (AYY). Our purpose is to bring Aalto students together to
-              design, build and race a Formula Student car — and to grow the recognition of the competition in Finland
-              and at Aalto.
+              Aalto Formula Team (AFT) is a student-run, non-profit association at Aalto University in Espoo, under
+              the Aalto University Student Union (AYY). We bring Aalto students together to design, build and race a
+              Formula Student car, and we want more people in Finland and at Aalto to know about the competition.
             </p>
             <p>
-              Guided by our Board, five sub-teams work in parallel: three engineer the car itself — chassis,
-              electrical and suspension — while two build the partnerships and communication that make the project
-              possible. Students from engineering, business and design all have a place on the team.
+              Our Board leads five sub-teams that work side by side. Three of them work on the car itself (chassis,
+              electrical and suspension), and two take care of partnerships and communication. Whether you study
+              engineering, business or design, there&apos;s a place for you on the team.
             </p>
             <p>
-              Beyond the car, we will organize events and excursions and work closely with companies, the university
-              and other student associations — giving our members hands-on experience they can&apos;t get in a
-              lecture hall.
+              Beyond the car, we will organize events and excursions and work with companies, the university and other
+              student associations. It&apos;s the kind of hands-on experience you can&apos;t get in a lecture hall.
             </p>
           </div>
         </div>
