@@ -34,15 +34,15 @@
 
 :root {
   color-scheme: light;
-  --brand: #b10b29;
-  --brand-deep: #8c0a21;
+  --brand: #ae0d28;
+  --brand-deep: #8b0b20;
   --background: #ffffff;
   --foreground: #141414;
   --card: #ffffff;
   --card-foreground: #141414;
   --popover: #ffffff;
   --popover-foreground: #141414;
-  --primary: #b10b29;
+  --primary: #ae0d28;
   --primary-foreground: #ffffff;
   --secondary: #f3f3f2;
   --secondary-foreground: #141414;
@@ -53,7 +53,7 @@
   --destructive: #c2410c;
   --border: #e4e4e2;
   --input: #e4e4e2;
-  --ring: #b10b29;
+  --ring: #ae0d28;
   --radius: 0.25rem;
 }
 
