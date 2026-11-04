@@ -1,4 +1,4 @@
-import { ArrowRight, Gauge, NotebookPen } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { SectionHeading } from '@/components/section-heading'
 
 // Event descriptions on the official Formula Student Germany site
@@ -7,7 +7,6 @@ const FSG_ABOUT = 'https://www.formulastudent.de/fsg/about'
 const events = [
   {
     title: 'Static Events',
-    icon: NotebookPen,
     body: 'Teams present their work to judges from the industry. They explain how the car was engineered, what it costs to build and how it could be sold.',
     points: [
       { label: 'Engineering design', href: `${FSG_ABOUT}#c927` },
@@ -17,7 +16,6 @@ const events = [
   },
   {
     title: 'Dynamic Events',
-    icon: Gauge,
     body: 'Out on the track, the car is tested on speed, cornering, handling and reliability. It all ends with a long endurance race, where energy efficiency counts too.',
     points: [
       { label: 'Acceleration & skid pad', href: `${FSG_ABOUT}#c933` },
@@ -43,11 +41,8 @@ export function FormulaStudentSection() {
         <div className="mt-16 grid gap-6 lg:grid-cols-2">
           {events.map((e, i) => (
             <article key={e.title} className="flex flex-col border border-border bg-background p-8 sm:p-12">
-              <div className="flex items-start justify-between text-brand">
-                <e.icon className="size-10" strokeWidth={1.5} aria-hidden="true" />
-                <span className="font-display text-xs text-muted-foreground">{String(i + 1).padStart(2, '0')}</span>
-              </div>
-              <h3 className="mt-12 text-3xl font-extrabold uppercase tracking-tight sm:text-4xl">{e.title}</h3>
+              <span className="font-display text-sm text-brand">{String(i + 1).padStart(2, '0')}</span>
+              <h3 className="mt-8 text-3xl font-extrabold uppercase tracking-tight sm:text-4xl">{e.title}</h3>
               <p className="mt-6 text-pretty leading-relaxed text-muted-foreground">{e.body}</p>
               <ul className="mt-10 flex flex-col border-t border-border">
                 {e.points.map((pt) => (

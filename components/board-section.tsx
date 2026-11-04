@@ -15,6 +15,12 @@ const board = [
     description: 'Oversees the engineering sub-teams and makes sure every system comes together as one car.',
   },
   {
+    name: 'Jan Tupko',
+    role: 'Electrical Manager',
+    photo: '/images/board/jan-tupko.jpg',
+    description: "Leads the electrical sub-team and is responsible for the car's wiring, electronics and power systems.",
+  },
+  {
     name: 'Khanh Hoang',
     role: 'Operations Manager',
     photo: '/images/board/khanh-hoang.jpg',
@@ -22,7 +28,7 @@ const board = [
   },
   {
     name: 'Anssi Lampinen',
-    role: 'Sponsorship Manager',
+    role: 'Partnership Manager',
     photo: '/images/board/anssi-lampinen.jpg',
     description: 'Builds and maintains our partnerships and secures the resources the team needs to build and race.',
   },
@@ -46,7 +52,7 @@ export function BoardSection() {
           </p>
         </div>
 
-        <ul className="mt-16 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-5">
+        <ul className="mt-16 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4">
           {board.map((member) => (
             <li key={member.name} className="group flex flex-col border border-border bg-background">
               <div className="relative aspect-[4/5] overflow-hidden bg-muted">
