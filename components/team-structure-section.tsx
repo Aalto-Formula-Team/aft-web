@@ -1,34 +1,29 @@
-import { Boxes, CircuitBoard, Handshake, Megaphone, Waypoints, Users } from 'lucide-react'
+import { Users } from 'lucide-react'
 import { SectionHeading } from '@/components/section-heading'
 
 const subTeams = [
   {
     name: 'Chassis',
-    icon: Boxes,
     description:
       'Designs the frame, bodywork and aerodynamics. Every other part of the car is built around their work.',
   },
   {
     name: 'Electrical',
-    icon: CircuitBoard,
     description:
       'Works on the wiring, sensors, data logging and control electronics that bring the car to life.',
   },
   {
     name: 'Suspension',
-    icon: Waypoints,
     description:
       'Works on the kinematics, uprights and dampers that turn power into grip, stability and faster laps.',
   },
   {
     name: 'Corporate Relations',
-    icon: Handshake,
     description:
       'Builds long-term partnerships with companies and makes sure we have what we need to race.',
   },
   {
     name: 'Marketing',
-    icon: Megaphone,
     description:
       "Runs the team's brand, content and social media, and makes sure our partners get seen.",
   },
@@ -62,12 +57,7 @@ export function TeamStructureSection() {
                 key={team.name}
                 className="group flex flex-col gap-6 border-border p-8 transition-colors hover:bg-muted max-lg:border-b sm:odd:border-r lg:border-r lg:last:border-r-0"
               >
-                <div className="flex items-center justify-between">
-                  <team.icon className="size-6 text-brand" aria-hidden="true" />
-                  <span className="font-display text-xs text-muted-foreground">
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
-                </div>
+                <span className="font-display text-sm text-brand">{String(i + 1).padStart(2, '0')}</span>
                 <div>
                   <h4 className="text-lg font-bold uppercase tracking-wide">{team.name}</h4>
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{team.description}</p>

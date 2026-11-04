@@ -1,31 +1,16 @@
-import { ArrowRight, BadgeCheck, CarFront, Network } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { SectionHeading } from '@/components/section-heading'
-
-function BrandIcon() {
-  return (
-    <span className="relative inline-flex">
-      <CarFront className="size-10" strokeWidth={1.5} aria-hidden="true" />
-      <BadgeCheck
-        className="absolute -right-2 -top-2 size-5 fill-brand text-white"
-        strokeWidth={2}
-        aria-hidden="true"
-      />
-    </span>
-  )
-}
 
 const pillars = [
   {
-    title: 'Brand Recognition',
-    icon: <BrandIcon />,
-    body: 'Get your logo on our website now, and later on the car, our team clothing and our marketing as the build comes together. You will reach students and motorsport fans from day one.',
-    points: ['Website placement now', 'Car livery & team apparel', 'Events, content & social'],
+    title: 'Future Talent',
+    body: 'Meet motivated students who are getting real, hands-on experience in engineering and business. They could be your next hires.',
+    points: ['Recruit directly from our team', 'Host workshops or tech talks for our members', 'Bring your engineering challenges to students'],
   },
   {
-    title: 'Future Talent',
-    icon: <Network className="size-10" strokeWidth={1.5} aria-hidden="true" />,
-    body: 'Meet motivated students who are getting real, hands-on experience in engineering and business. They could be your next hires.',
-    points: ['Recruitment access', 'Workshops & tech talks', 'Real-world problem solving'],
+    title: 'Brand Recognition',
+    body: 'Put your logo on our website, the car, our team clothing and our marketing. Reach students, the Aalto community and motorsport fans.',
+    points: ['Your logo on our website', 'Your logo on the car and team merch', 'Visibility at our events and on social media'],
   },
 ]
 
@@ -33,7 +18,7 @@ export function SponsorSection() {
   return (
     <section id="sponsor" className="scroll-mt-20 bg-muted py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <SectionHeading eyebrow="01 — Sponsor Value" title="Why partner with us?" className="max-w-3xl" />
+        <SectionHeading eyebrow="01 — Partner Value" title="Why partner with us?" className="max-w-3xl" />
 
         <div className="mt-16 grid gap-6 lg:grid-cols-2">
           {pillars.map((p, i) => (
@@ -41,13 +26,10 @@ export function SponsorSection() {
               key={p.title}
               className="group flex flex-col border border-border p-8 transition-all duration-300 hover:-translate-y-1 hover:border-brand hover:bg-brand hover:text-white sm:p-12"
             >
-              <div className="flex items-start justify-between text-brand transition-colors group-hover:text-white">
-                {p.icon}
-                <span className="font-display text-xs text-muted-foreground transition-colors group-hover:text-white/70">
-                  {String(i + 1).padStart(2, '0')}
-                </span>
-              </div>
-              <h3 className="mt-12 text-3xl font-extrabold uppercase tracking-tight sm:text-4xl">{p.title}</h3>
+              <span className="font-display text-sm text-brand transition-colors group-hover:text-white/80">
+                {String(i + 1).padStart(2, '0')}
+              </span>
+              <h3 className="mt-8 text-3xl font-extrabold uppercase tracking-tight sm:text-4xl">{p.title}</h3>
               <p className="mt-6 text-pretty leading-relaxed text-muted-foreground transition-colors group-hover:text-white/85">
                 {p.body}
               </p>
@@ -55,10 +37,9 @@ export function SponsorSection() {
                 {p.points.map((pt) => (
                   <li
                     key={pt}
-                    className="flex items-center justify-between border-b border-border py-4 text-sm font-semibold uppercase tracking-[0.12em] transition-colors group-hover:border-white/20"
+                    className="border-b border-border py-4 text-sm font-semibold uppercase tracking-[0.12em] transition-colors group-hover:border-white/20"
                   >
                     {pt}
-                    <ArrowRight className="size-4" aria-hidden="true" />
                   </li>
                 ))}
               </ul>

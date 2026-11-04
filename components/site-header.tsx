@@ -12,6 +12,18 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false)
   const pathname = usePathname()
 
+  // "Partner With Us" glides to the contact form: on the same page we scroll here,
+  // from other pages the For Companies page does it (see SmoothHashScroll).
+  const onPartnerClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    setOpen(false)
+    if (pathname !== '/for-companies') return
+    const el = document.getElementById('contact')
+    if (!el) return
+    e.preventDefault()
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    window.history.replaceState(null, '', '/for-companies#contact')
+  }
+
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/15 bg-brand">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:h-20 lg:px-10">
@@ -47,7 +59,9 @@ export function SiteHeader() {
             Join Us
           </Link>
           <Link
-            href="/contact#sponsor"
+            href="/for-companies#contact"
+            scroll={false}
+            onClick={onPartnerClick}
             className="hidden whitespace-nowrap border border-white bg-white px-5 py-3 text-xs font-bold uppercase tracking-[0.18em] text-brand transition-colors hover:bg-transparent hover:text-white sm:inline-block"
           >
             Partner With Us
@@ -90,8 +104,9 @@ export function SiteHeader() {
               Join Us
             </Link>
             <Link
-              href="/contact#sponsor"
-              onClick={() => setOpen(false)}
+              href="/for-companies#contact"
+              scroll={false}
+              onClick={onPartnerClick}
               className="block bg-white px-5 py-4 text-center text-xs font-bold uppercase tracking-[0.18em] text-brand"
             >
               Partner With Us

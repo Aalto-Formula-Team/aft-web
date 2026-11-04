@@ -31,8 +31,8 @@ export function AboutSection() {
         <div className="mt-16 grid gap-4 sm:grid-cols-2">
           <div className="relative aspect-[4/3] overflow-hidden bg-muted">
             <Image
-              src="/images/team-whiteboard.png"
-              alt="Students sketching chassis concepts together at a whiteboard"
+              src="/images/board/board.jpg"
+              alt="The Aalto Formula Team board"
               fill
               sizes="(min-width: 640px) 50vw, 100vw"
               className="object-cover"
@@ -40,8 +40,8 @@ export function AboutSection() {
           </div>
           <div className="relative aspect-[4/3] overflow-hidden bg-muted">
             <Image
-              src="/images/team-laptops.png"
-              alt="Students reviewing suspension CAD models on laptops"
+              src="/images/emma-kimilainen.jpg"
+              alt="Racing driver Emma Kimiläinen speaking on stage"
               fill
               sizes="(min-width: 640px) 50vw, 100vw"
               className="object-cover"
