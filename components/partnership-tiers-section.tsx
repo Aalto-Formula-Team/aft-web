@@ -112,10 +112,6 @@ export function PartnershipTiersSection() {
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
           <SectionHeading eyebrow="02 — Packages" title="Partnership packages." className="max-w-3xl" />
-          <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
-            Each package has two prices: <strong className="text-foreground">cash</strong> /{' '}
-            <strong className="text-foreground">in-kind</strong> (parts, materials, services).
-          </p>
         </div>
 
         <div className="mt-16">
