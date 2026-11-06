@@ -10,8 +10,8 @@ const points = [
     body: 'Aaltoes, the student community that started Slush, began in 2009 because students saw a gap and filled it. Today Aalto produces about half of all Finnish university startups.',
   },
   {
-    title: "Today's team, tomorrow's founders",
-    body: 'Aalto alumni co-founded companies like Wolt. The people building this car will go on to build companies, technologies and industries.',
+    title: "Today's team, tomorrow's colleagues",
+    body: 'Our members take ownership of real problems, work across disciplines and deliver against hard deadlines. That is the experience they bring to your team.',
   },
   {
     title: 'A startup on wheels',
