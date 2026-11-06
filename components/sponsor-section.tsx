@@ -8,9 +8,9 @@ const pillars = [
     points: ['Recruit directly from our team', 'Host workshops or tech talks for our members', 'Bring your engineering challenges to students'],
   },
   {
-    title: 'Brand Recognition',
-    body: 'Put your logo on our website, the car, our team clothing and our marketing. Reach students, the Aalto community and motorsport fans.',
-    points: ['Your logo on our website', 'Your logo on the car and team merch', 'Visibility at our events and on social media'],
+    title: 'Put your tech on track',
+    body: 'Your parts, materials and software end up in a real race car, designed and tested by engineering students.',
+    points: ['Your products proven in a demanding build', 'Honest feedback from the engineers using them', 'A real car to show what your technology can do'],
   },
 ]
 
