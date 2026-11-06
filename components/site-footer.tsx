@@ -60,7 +60,12 @@ export function SiteFooter() {
       <div className="border-t border-white/15">
         <div className="mx-auto flex max-w-7xl flex-col gap-2 px-6 py-6 text-xs text-white/60 sm:flex-row sm:justify-between lg:px-10">
           <p>{'© 2026 Aalto Formula Team ry. All rights reserved.'}</p>
-          <p>In affiliation with Aalto University</p>
+          <div className="flex flex-col gap-2 sm:flex-row sm:gap-6">
+            <Link href="/privacy" className="transition-colors hover:text-white">
+              Privacy Policy
+            </Link>
+            <p>In affiliation with Aalto University</p>
+          </div>
         </div>
       </div>
     </footer>
