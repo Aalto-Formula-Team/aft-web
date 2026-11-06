@@ -10,7 +10,7 @@ const pillars = [
   {
     title: 'Put your tech on track',
     body: 'Your parts, materials and software end up in a real race car, designed and tested by engineering students.',
-    points: ['Your products proven in a demanding build', 'Honest feedback from the engineers using them', 'A real car to show what your technology can do'],
+    points: ['Your products proven in a demanding build', 'Honest feedback from the engineers using them', 'A real car to show what your technology can do', 'Future engineers who already know your tools when they start their careers'],
   },
 ]
 
