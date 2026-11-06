@@ -7,7 +7,7 @@ export function SectionHeading({
   className,
 }: {
   eyebrow: string
-  title: string
+  title: React.ReactNode
   tone?: 'dark' | 'light'
   className?: string
 }) {

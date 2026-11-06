@@ -8,7 +8,11 @@ export function AboutSection() {
         <div className="grid gap-12 lg:grid-cols-2">
           <SectionHeading
             eyebrow="01 — Who We Are"
-            title="Engineers, designers and business minds. One car."
+            title={
+              <>
+                Engineers, designers and business minds. <span className="block text-brand">One car.</span>
+              </>
+            }
           />
           <div className="flex max-w-xl flex-col gap-6 text-pretty text-lg leading-relaxed text-muted-foreground">
             <p>
