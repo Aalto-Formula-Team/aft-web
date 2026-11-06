@@ -15,7 +15,7 @@ const points = [
   },
   {
     title: 'A startup on wheels',
-    body: 'A small team with a lot to do. Everyone works hard, learns fast and picks up whatever the car needs, often things they have never done before.',
+    body: 'A small team and a tight budget mean everyone puts in the hours and learns fast. Members pick up skills no course teaches, from design and manufacturing to budgeting and pitching to partners.',
   },
 ]
 
