@@ -110,9 +110,7 @@ export function PartnershipTiersSection() {
   return (
     <section id="partnership" className="scroll-mt-20 bg-background py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
-          <SectionHeading eyebrow="02 — Packages" title="Partnership packages." className="max-w-3xl" />
-        </div>
+        <SectionHeading eyebrow="02 — Packages" title="Partnership packages." className="max-w-3xl" />
 
         <div className="mt-16">
           <div className="grid gap-6 lg:grid-cols-[1fr_1.12fr_1fr] lg:items-end lg:gap-2">
