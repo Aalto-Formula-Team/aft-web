@@ -42,7 +42,12 @@ const tiers: Tier[] = [
     cash: '2 000 €',
     inKind: '3 500 €',
     licenceNote: true,
-    benefits: ['Name and logo on website', 'Logo on car (medium, choose your spot)', 'Unlimited recruiting'],
+    benefits: [
+      'Name and logo on website',
+      'Logo on car (medium, choose your spot)',
+      'Unlimited recruiting',
+      'Invitation to our car reveal event',
+    ],
     merch: ['T-shirts: medium logo on the back or sleeves', 'Hoodies: medium logo on the back'],
   },
   {
@@ -60,7 +65,10 @@ const tiers: Tier[] = [
       'Name and logo on website',
       'Logo on car (big, choose your spot)',
       'Unlimited recruiting',
-      'Invitation to our car reveal event, possibility to organise other events',
+      'Invitation to our car reveal event',
+      'A dedicated feature about your company on our social media',
+      'A team visit to your office with a talk about the car',
+      'Possibility to organise other events with us',
     ],
     merch: [
       'T-shirts: front or sleeves',
