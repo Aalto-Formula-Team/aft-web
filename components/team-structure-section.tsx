@@ -18,7 +18,7 @@ const subTeams = [
       'Works on the kinematics, uprights and dampers that turn power into grip, stability and faster laps.',
   },
   {
-    name: 'Corporate Relations',
+    name: 'Partnerships',
     description:
       'Builds long-term partnerships with companies and makes sure we have what we need to race.',
   },

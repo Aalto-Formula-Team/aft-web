@@ -30,7 +30,7 @@ export async function submitInquiry(_prev: InquiryState, formData: FormData): Pr
   // Prototype: in production this would create a document in a Payload CMS "inquiries" collection.
   return {
     status: 'success',
-    message: `Thanks, ${name}. Our Corporate Relations team will be in touch shortly.`,
+    message: `Thanks, ${name}. Our Partnerships team will be in touch shortly.`,
   }
 }
 
