@@ -58,8 +58,8 @@ export function ContactSection() {
             <div>
               <dt className="font-display text-[0.65rem] uppercase tracking-[0.3em] text-white/60">Email</dt>
               <dd className="mt-1 text-lg font-semibold">
-                <a href="mailto:aaltoformulateam@gmail.com" className="underline-offset-4 hover:underline">
-                  info@aaltoformulateam.fi
+                <a href="mailto:contact@aaltoformulateam.fi" className="underline-offset-4 hover:underline">
+                  contact@aaltoformulateam.fi
                 </a>
               </dd>
             </div>
