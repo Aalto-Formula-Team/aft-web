@@ -40,7 +40,7 @@ const milestones: {
   {
     phase: 'Driverless',
     icon: Cpu,
-    tag: { label: 'Long-term goal', style: 'outline' },
+    tag: { label: 'Season 2028', style: 'date' },
     items: ['Perception, planning & control', 'An autonomous system on our own car', 'The FS Germany Driverless Cup'],
   },
 ]
