@@ -11,6 +11,7 @@ import { navLinks } from '@/lib/site'
 export function SiteHeader() {
   const [open, setOpen] = useState(false)
   const pathname = usePathname()
+  const isActive = (href: string) => pathname === href || (href !== '/' && pathname.startsWith(`${href}/`))
 
   // "Partner With Us" glides to the contact form: on the same page we scroll here,
   // from other pages the For Companies page does it (see SmoothHashScroll).
@@ -33,7 +34,7 @@ export function SiteHeader() {
 
         <nav aria-label="Primary" className="hidden items-center gap-10 lg:flex">
           {navLinks.map((link) => {
-            const active = pathname === link.href
+            const active = isActive(link.href)
             return (
               <Link
                 key={link.href}
@@ -87,7 +88,7 @@ export function SiteHeader() {
                 <Link
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  aria-current={pathname === link.href ? 'page' : undefined}
+                  aria-current={isActive(link.href) ? 'page' : undefined}
                   className="block border-b border-white/10 py-4 text-sm font-semibold uppercase tracking-[0.2em] text-white"
                 >
                   {link.label}

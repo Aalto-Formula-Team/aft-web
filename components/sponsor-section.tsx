@@ -4,13 +4,13 @@ import { SectionHeading } from '@/components/section-heading'
 const pillars = [
   {
     title: 'Future Talent',
-    body: 'Meet motivated students who are getting real, hands-on experience in engineering and business. They could be your next hires.',
-    points: ['Recruit directly from our team', 'Host workshops or tech talks for our members', 'Bring your engineering challenges to students'],
+    body: 'Building a race car from scratch draws students who want more than a degree. They get real, hands-on experience in engineering and business, and they could be your next hires.',
+    points: ['Recruit directly from our team', 'Host workshops or tech talks for our members', 'Get to know future engineers before they graduate'],
   },
   {
-    title: 'Brand Recognition',
-    body: 'Put your logo on our website, the car, our team clothing and our marketing. Reach students, the Aalto community and motorsport fans.',
-    points: ['Your logo on our website', 'Your logo on the car and team merch', 'Visibility at our events and on social media'],
+    title: 'Put your tech on track',
+    body: 'Your parts, materials and software end up in a real race car, designed and tested by engineering students.',
+    points: ['Your products proven in a demanding build', 'Honest feedback from future engineers learning your tools', 'A real car to show what your technology can do'],
   },
 ]
 

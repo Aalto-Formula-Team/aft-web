@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { ArrowRight, Clock, MapPin } from 'lucide-react'
 import { events, type TeamEvent } from '@/lib/events'
 import { cn } from '@/lib/utils'
@@ -31,7 +32,7 @@ function EventCard({ event, past }: { event: TeamEvent; past: boolean }) {
 
       <article
         className={cn(
-          'flex flex-col overflow-hidden border bg-background sm:flex-row',
+          'group relative flex flex-col overflow-hidden border bg-background transition-colors hover:border-brand sm:flex-row',
           past ? 'border-border' : 'border-brand',
         )}
       >
@@ -48,7 +49,12 @@ function EventCard({ event, past }: { event: TeamEvent; past: boolean }) {
         )}
         <div className="flex flex-col p-6 sm:p-8">
           <p className="font-display text-[0.65rem] uppercase tracking-[0.3em] text-brand">{event.type}</p>
-          <h3 className="mt-3 text-2xl font-extrabold uppercase tracking-tight">{event.title}</h3>
+          <h3 className="mt-3 text-2xl font-extrabold uppercase tracking-tight">
+            {/* The ::after covers the whole card, so clicking anywhere on it opens the event. */}
+            <Link href={`/events/${event.slug}`} className="transition-colors after:absolute after:inset-0 group-hover:text-brand">
+              {event.title}
+            </Link>
+          </h3>
           <p className="mt-4 text-pretty leading-relaxed text-muted-foreground">{event.description}</p>
           {(event.time || event.location) && (
             <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm font-semibold">
@@ -71,12 +77,19 @@ function EventCard({ event, past }: { event: TeamEvent; past: boolean }) {
               href={event.link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 inline-flex items-center gap-2 self-start text-sm font-bold uppercase tracking-[0.18em] text-brand hover:underline"
+              className="relative z-10 mt-6 inline-flex items-center gap-2 self-start text-sm font-bold uppercase tracking-[0.18em] text-brand hover:underline"
             >
               {event.link.label}
               <ArrowRight className="size-4" aria-hidden="true" />
             </a>
           )}
+          <span
+            aria-hidden="true"
+            className="mt-6 inline-flex items-center gap-2 self-start text-sm font-bold uppercase tracking-[0.18em] text-brand group-hover:underline"
+          >
+            Read more
+            <ArrowRight className="size-4" />
+          </span>
         </div>
       </article>
     </li>

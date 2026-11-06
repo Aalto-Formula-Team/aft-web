@@ -18,7 +18,7 @@ const subTeams = [
       'Works on the kinematics, uprights and dampers that turn power into grip, stability and faster laps.',
   },
   {
-    name: 'Corporate Relations',
+    name: 'Partnerships',
     description:
       'Builds long-term partnerships with companies and makes sure we have what we need to race.',
   },
@@ -33,23 +33,12 @@ export function TeamStructureSection() {
   return (
     <section id="structure" className="scroll-mt-20 bg-background py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="grid gap-12 lg:grid-cols-2 lg:items-end">
-          <SectionHeading eyebrow="02 — Team Structure" title="How we are organized." />
-          <p className="max-w-xl text-pretty text-lg leading-relaxed text-muted-foreground">
-            The Board leads five sub-teams that work side by side. Three work on the car, and two take care of
-            partnerships and communication.
-          </p>
-        </div>
+        <SectionHeading eyebrow="02 — Team Structure" title="How we are organized." />
 
         <div className="mt-16 border border-border">
-          <div className="flex flex-col gap-4 border-b border-border bg-brand p-8 text-white sm:flex-row sm:items-center sm:justify-between">
-            <div className="flex items-center gap-4">
-              <Users className="size-6" aria-hidden="true" />
-              <h3 className="text-xl font-bold uppercase tracking-wide">Our Teams</h3>
-            </div>
-            <p className="max-w-xl text-sm leading-relaxed text-white/80">
-              Five sub-teams, each run by its own members and coordinated by the Board.
-            </p>
+          <div className="flex items-center gap-4 border-b border-border bg-brand p-8 text-white">
+            <Users className="size-6" aria-hidden="true" />
+            <h3 className="text-xl font-bold uppercase tracking-wide">Our Teams</h3>
           </div>
           <ul className="grid sm:grid-cols-2 lg:grid-cols-5">
             {subTeams.map((team, i) => (

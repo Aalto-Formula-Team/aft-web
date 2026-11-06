@@ -45,7 +45,7 @@ export function ContactSection() {
     <section id="contact" className="scroll-mt-20 bg-brand py-24 text-white lg:py-32">
       <div className="mx-auto grid max-w-7xl gap-16 px-6 lg:grid-cols-[1fr_1.2fr] lg:px-10">
         <div>
-          <SectionHeading eyebrow="03 — Contact" title="Start the conversation." tone="light" />
+          <SectionHeading eyebrow="04 — Contact" title="Start the conversation." tone="light" />
           <p className="mt-8 max-w-md text-pretty text-lg leading-relaxed text-white/80">
             Interested in becoming a founding partner? Tell us a little about your organization and we&apos;ll get back
             to you with our partnership deck.
@@ -59,8 +59,8 @@ export function ContactSection() {
             <div>
               <dt className="font-display text-[0.65rem] uppercase tracking-[0.3em] text-white/60">Email</dt>
               <dd className="mt-1 text-lg font-semibold">
-                <a href="mailto:info@aaltoformulateam.fi" className="underline-offset-4 hover:underline">
-                  info@aaltoformulateam.fi
+                <a href="mailto:contact@aaltoformulateam.fi" className="underline-offset-4 hover:underline">
+                  contact@aaltoformulateam.fi
                 </a>
               </dd>
             </div>

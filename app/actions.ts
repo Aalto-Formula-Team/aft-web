@@ -13,7 +13,7 @@ export type InquiryState = {
   values?: Partial<Record<InquiryField, string>>
 }
 
-const INQUIRY_TO_EMAIL = 'info@aaltoformulateam.fi'
+const INQUIRY_TO_EMAIL = 'contact@aaltoformulateam.fi'
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
@@ -26,7 +26,7 @@ export async function submitInquiry(_prev: InquiryState, formData: FormData): Pr
   const values = { name, company, email, message }
   const success: InquiryState = {
     status: 'success',
-    message: `Thanks, ${name}. Our Corporate Relations team will be in touch shortly.`,
+    message: `Thanks, ${name}. Our Partnerships team will be in touch shortly.`,
   }
 
   // Honeypot: the "website" field is hidden from people, so only bots fill it in. Pretend it worked.

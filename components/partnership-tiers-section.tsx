@@ -1,4 +1,22 @@
-import { ArrowRight, Check } from 'lucide-react'
+import {
+  ArrowRight,
+  BadgeCheck,
+  CalendarDays,
+  CarFront,
+  Check,
+  Flag,
+  Globe,
+  KeyRound,
+  Megaphone,
+  MessageCircle,
+  Mic,
+  Paintbrush,
+  ShieldCheck,
+  Shirt,
+  Sparkles,
+  Users,
+  type LucideIcon,
+} from 'lucide-react'
 import { SectionHeading } from '@/components/section-heading'
 import { cn } from '@/lib/utils'
 
@@ -28,7 +46,7 @@ const tiers: Tier[] = [
     order: 'order-3',
     cash: '500 €',
     inKind: '1 000 €',
-    benefits: ['Name and logo on website', 'Logo on car (small)', 'Limited access to recruiting'],
+    benefits: ['Name and logo on website', 'Logo on car (small)'],
     merch: ['T-shirts: medium logo on the back', 'Hoodies: small logo on the back'],
   },
   {
@@ -42,7 +60,12 @@ const tiers: Tier[] = [
     cash: '2 000 €',
     inKind: '3 500 €',
     licenceNote: true,
-    benefits: ['Name and logo on website', 'Logo on car (medium, choose your spot)', 'Unlimited recruiting'],
+    benefits: [
+      'Name and logo on website',
+      'Logo on car (medium, choose your spot)',
+      'One recruiting post per season',
+      'Invitation to our car reveal event',
+    ],
     merch: ['T-shirts: medium logo on the back or sleeves', 'Hoodies: medium logo on the back'],
   },
   {
@@ -58,9 +81,10 @@ const tiers: Tier[] = [
     licenceNote: true,
     benefits: [
       'Name and logo on website',
-      'Logo on car (big, choose your spot)',
+      'Logo on car (big, first pick of spots after the Main partner)',
       'Unlimited recruiting',
-      'Invitation to our car reveal event, possibility to organise other events',
+      'Invitation to our car reveal event',
+      'Invitation to organise other events with us',
     ],
     merch: [
       'T-shirts: front or sleeves',
@@ -77,7 +101,7 @@ const mainBenefits = [
   'Name and logo at the top of our website',
   'Logo on car: first pick of the spots you want, up to 2 spots',
   'Unlimited recruiting',
-  'Invitation to speak at our car reveal event, possibility to organise other events',
+  'Invitation to speak at our car reveal event and organise other events',
   'Team merch: T-shirts, hoodies and jackets with a large logo in the centre of the back and a smaller one on the front, caps with your logo on the front, all next to the team logo',
 ]
 
@@ -89,19 +113,46 @@ const mainExtras = [
   'Or tell us what would serve you best',
 ]
 
-function List({ items, inverted }: { items: string[]; inverted?: boolean }) {
+// Picks an icon that matches each benefit line. First matching rule wins.
+const iconRules: [RegExp, LucideIcon][] = [
+  [/speak/i, Mic],
+  [/reveal/i, Sparkles],
+  [/organise/i, CalendarDays],
+  [/paint/i, Paintbrush],
+  [/borrow/i, KeyRound],
+  [/test track/i, Flag],
+  [/exclusiv/i, ShieldCheck],
+  [/powered by/i, Megaphone],
+  [/everywhere/i, BadgeCheck],
+  [/website/i, Globe],
+  [/car/i, CarFront],
+  [/recruit/i, Users],
+  [/t-shirt|hoodie|jacket|cap|merch/i, Shirt],
+  [/tell us/i, MessageCircle],
+]
+
+function iconFor(item: string): LucideIcon {
+  return iconRules.find(([re]) => re.test(item))?.[1] ?? Check
+}
+
+function List({ items, inverted, plain }: { items: string[]; inverted?: boolean; plain?: boolean }) {
   return (
     <ul className="flex flex-col gap-3">
-      {items.map((item) => (
-        <li key={item} className="flex gap-3 text-sm leading-relaxed">
-          <Check
-            className={cn('mt-0.5 size-4 shrink-0', inverted ? 'text-white' : 'text-brand')}
-            strokeWidth={2.5}
-            aria-hidden="true"
-          />
-          <span>{item}</span>
-        </li>
-      ))}
+      {items.map((item) => {
+        const Icon = iconFor(item)
+        return (
+          <li key={item} className="flex gap-3 text-sm leading-relaxed">
+            {!plain && (
+              <Icon
+                className={cn('mt-0.5 size-4 shrink-0', inverted ? 'text-white' : 'text-brand')}
+                strokeWidth={2}
+                aria-hidden="true"
+              />
+            )}
+            <span>{item}</span>
+          </li>
+        )
+      })}
     </ul>
   )
 }
@@ -110,13 +161,7 @@ export function PartnershipTiersSection() {
   return (
     <section id="partnership" className="scroll-mt-20 bg-background py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
-          <SectionHeading eyebrow="02 — Packages" title="Partnership packages." className="max-w-3xl" />
-          <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
-            Each package has two prices: <strong className="text-foreground">cash</strong> /{' '}
-            <strong className="text-foreground">in-kind</strong> (parts, materials, services).
-          </p>
-        </div>
+        <SectionHeading eyebrow="03 — Packages" title="Partnership packages." className="max-w-3xl" />
 
         <div className="mt-16">
           <div className="grid gap-6 lg:grid-cols-[1fr_1.12fr_1fr] lg:items-end lg:gap-2">
@@ -150,10 +195,11 @@ export function PartnershipTiersSection() {
                   </div>
 
                   <div className="mt-8 border-t border-border pt-8">
-                    <p className="mb-4 font-display text-[0.65rem] uppercase tracking-[0.3em] text-brand">
+                    <p className="mb-4 flex items-center gap-3 font-display text-[0.65rem] uppercase tracking-[0.3em] text-brand">
+                      <Shirt className="size-4 shrink-0" strokeWidth={2} aria-hidden="true" />
                       Logo on team merch
                     </p>
-                    <List items={t.merch} />
+                    <List items={t.merch} plain />
                   </div>
                 </article>
                 <div
@@ -208,8 +254,8 @@ export function PartnershipTiersSection() {
           </a>
         </article>
 
-        <p className="mt-6 text-xs text-muted-foreground">
-          * For Silver, Gold and Main partner, the value of software licences is agreed separately.
+        <p className="mt-8 text-center text-sm text-foreground">
+          * For Silver, Gold and Main partner, the value of software licences is agreed upon separately.
         </p>
       </div>
     </section>

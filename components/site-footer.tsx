@@ -50,10 +50,10 @@ export function SiteFooter() {
           </ul>
           <p className="mt-8 font-display text-[0.65rem] uppercase tracking-[0.3em] text-white/60">Email</p>
           <a
-            href="mailto:info@aaltoformulateam.fi"
+            href="mailto:contact@aaltoformulateam.fi"
             className="mt-3 inline-block text-sm font-semibold text-white/85 underline-offset-4 transition-colors hover:text-white hover:underline"
           >
-            info@aaltoformulateam.fi
+            contact@aaltoformulateam.fi
           </a>
         </div>
       </div>
