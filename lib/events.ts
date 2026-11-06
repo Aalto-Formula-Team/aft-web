@@ -32,7 +32,7 @@ export const events: TeamEvent[] = [
   },
   {
     title: 'Emma Kimiläinen',
-    date: '2026-10-15', // TODO: confirm date
+    date: '2026-11-03',
     type: 'AFT On The Grid',
     location: 'Aalto University, Otaniemi',
     description:
