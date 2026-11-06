@@ -33,13 +33,7 @@ export function TeamStructureSection() {
   return (
     <section id="structure" className="scroll-mt-20 bg-background py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="grid gap-12 lg:grid-cols-2 lg:items-end">
-          <SectionHeading eyebrow="02 — Team Structure" title="How we are organized." />
-          <p className="max-w-xl text-pretty text-lg leading-relaxed text-muted-foreground">
-            The Board leads five sub-teams that work side by side. Three work on the car, and two take care of
-            partnerships and communication.
-          </p>
-        </div>
+        <SectionHeading eyebrow="02 — Team Structure" title="How we are organized." />
 
         <div className="mt-16 border border-border">
           <div className="flex flex-col gap-4 border-b border-border bg-brand p-8 text-white sm:flex-row sm:items-center sm:justify-between">
