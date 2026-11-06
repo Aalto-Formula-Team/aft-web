@@ -57,7 +57,10 @@ export function RoadmapSection() {
                       // The step into Driverless is further away in time: solid ends, dashed middle.
                       <>
                         <span className="h-6 w-px shrink-0 bg-brand/40 lg:h-px lg:w-8" />
-                        <span className="flex-1 border-l border-dashed border-brand/40 lg:border-t lg:border-l-0" />
+                        {/* Six dashes with gaps as long as the dashes, at any width. */}
+                        {Array.from({ length: 13 }, (_, k) => (
+                          <span key={k} className={k % 2 ? 'w-px flex-1 bg-brand/40 lg:h-px lg:w-auto' : 'flex-1'} />
+                        ))}
                         <span className="h-6 w-px shrink-0 bg-brand/40 lg:h-px lg:w-8" />
                       </>
                     ) : (
