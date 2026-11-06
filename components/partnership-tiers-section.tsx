@@ -28,7 +28,7 @@ const tiers: Tier[] = [
     order: 'order-3',
     cash: '500 €',
     inKind: '1 000 €',
-    benefits: ['Name and logo on website', 'Logo on car (small)', 'Limited access to recruiting'],
+    benefits: ['Name and logo on website', 'Logo on car (small)'],
     merch: ['T-shirts: medium logo on the back', 'Hoodies: small logo on the back'],
   },
   {
@@ -45,7 +45,7 @@ const tiers: Tier[] = [
     benefits: [
       'Name and logo on website',
       'Logo on car (medium, choose your spot)',
-      'Unlimited recruiting',
+      'Limited access to recruiting',
       'Invitation to our car reveal event',
     ],
     merch: ['T-shirts: medium logo on the back or sleeves', 'Hoodies: medium logo on the back'],
