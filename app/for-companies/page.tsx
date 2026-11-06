@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { SiteHeader } from '@/components/site-header'
 import { PageHero } from '@/components/page-hero'
 import { SponsorSection } from '@/components/sponsor-section'
+import { WhyAaltoSection } from '@/components/why-aalto-section'
 import { PartnershipTiersSection } from '@/components/partnership-tiers-section'
 import { ContactSection } from '@/components/contact-section'
 import { SiteFooter } from '@/components/site-footer'
@@ -23,6 +24,7 @@ export default function ForCompaniesPage() {
           intro="Help us build our first Formula Student car. See what we offer our partners and start the conversation."
         />
         <SponsorSection />
+        <WhyAaltoSection />
         <PartnershipTiersSection />
         <ContactSection />
       </main>
