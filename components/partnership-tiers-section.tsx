@@ -83,7 +83,7 @@ const mainBenefits = [
   'Name and logo at the top of our website',
   'Logo on car: first pick of the spots you want, up to 2 spots',
   'Unlimited recruiting',
-  'Invitation to speak at our car reveal event, possibility to organise other events',
+  'Invitation to speak at our car reveal event and organise other events',
   'Team merch: T-shirts, hoodies and jackets with a large logo in the centre of the back and a smaller one on the front, caps with your logo on the front, all next to the team logo',
 ]
 
