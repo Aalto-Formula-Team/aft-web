@@ -25,7 +25,7 @@ export type TeamEvent = {
 export const events: TeamEvent[] = [
   {
     title: 'Ossi Oikkarinen',
-    date: '2026-11-20', // TODO: confirm date
+    date: '2026-11-27',
     type: 'AFT On The Grid',
     location: 'Aalto University, Otaniemi',
     description: 'Ossi Oikkarinen joins us to talk about his career and answer questions from students.',
