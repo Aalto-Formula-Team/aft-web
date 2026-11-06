@@ -4,12 +4,12 @@ import { SectionHeading } from '@/components/section-heading'
 const pillars = [
   {
     title: 'Future Talent',
-    body: 'Building a race car from scratch draws students who want more than a degree. They get real, hands-on experience in engineering and business, and they could be your next hires.',
+    body: 'Building a race car from scratch draws students who want more than a degree. They get real, hands-on experience in engineering and business, and they could be your next hires. Over time, we also aim to take on autonomous driving, which brings software and AI students to the team.',
     points: ['Recruit directly from our team', 'Host workshops or tech talks for our members', 'Get to know future engineers before they graduate'],
   },
   {
     title: 'Put your tech on track',
-    body: 'Your parts, materials and software end up in a real race car, designed and tested by engineering students.',
+    body: 'Your parts, materials and software end up in a real race car, designed and tested by engineering students. Sensors, computing hardware and software tools will matter even more as we work toward driverless racing.',
     points: ['Your products proven in a demanding build', 'Honest feedback from future engineers learning your tools', 'A real car to show what your technology can do'],
   },
 ]

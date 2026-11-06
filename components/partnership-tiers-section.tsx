@@ -23,9 +23,6 @@ import { cn } from '@/lib/utils'
 type Tier = {
   name: string
   place: string
-  cash: string
-  inKind: string
-  licenceNote?: boolean
   medal: string
   medalText: string
   medalTint: string
@@ -44,8 +41,6 @@ const tiers: Tier[] = [
     medalTint: '#fbf3ec',
     step: 'lg:h-20',
     order: 'order-3',
-    cash: '500 €',
-    inKind: '1 000 €',
     benefits: ['Name and logo on website', 'Logo on car (small)'],
     merch: ['T-shirts: medium logo on the back', 'Hoodies: small logo on the back'],
   },
@@ -57,9 +52,6 @@ const tiers: Tier[] = [
     medalTint: '#f3f5f7',
     step: 'lg:h-28',
     order: 'order-2 lg:order-1',
-    cash: '2 000 €',
-    inKind: '3 500 €',
-    licenceNote: true,
     benefits: [
       'Name and logo on website',
       'Logo on car (medium, choose your spot)',
@@ -76,9 +68,6 @@ const tiers: Tier[] = [
     medalTint: '#fffaf0',
     step: 'lg:h-36',
     order: 'order-1 lg:order-2',
-    cash: '5 000 €',
-    inKind: '7 500 €',
-    licenceNote: true,
     benefits: [
       'Name and logo on website',
       'Logo on car (big, first pick of spots after the Main partner)',
@@ -182,13 +171,6 @@ export function PartnershipTiersSection() {
                       {t.place === '1' ? '1st' : t.place === '2' ? '2nd' : '3rd'}
                     </span>
                   </div>
-                  <p className="mt-6 whitespace-nowrap font-display text-2xl font-bold">
-                    {t.cash}
-                    <span className="px-2 font-normal text-muted-foreground">/</span>
-                    {t.inKind}
-                    {t.licenceNote && <span aria-label="see note on software licences">*</span>}
-                  </p>
-                  <p className="mt-1 text-xs uppercase tracking-[0.18em] text-muted-foreground">Cash / in-kind</p>
 
                   <div className="mt-8 border-t border-border pt-8">
                     <List items={t.benefits} />
@@ -224,15 +206,6 @@ export function PartnershipTiersSection() {
               <p className="font-display text-xs uppercase tracking-[0.35em] text-white/60">Only one available</p>
               <h3 className="mt-4 text-4xl font-extrabold uppercase tracking-tight sm:text-5xl">Main partner</h3>
             </div>
-            <div className="lg:text-right">
-              <p className="text-xs uppercase tracking-[0.18em] text-white/60">Starting at</p>
-              <p className="mt-1 font-display text-2xl font-bold sm:text-3xl">
-                <span className="whitespace-nowrap">15 000 €</span>
-                <span className="px-2 font-normal text-white/50">/</span>
-                <span className="whitespace-nowrap">25 000 €*</span>
-              </p>
-              <p className="mt-1 text-xs uppercase tracking-[0.18em] text-white/60">Cash / in-kind</p>
-            </div>
           </div>
 
           <div className="mt-10 grid gap-12 lg:grid-cols-[1.4fr_1fr]">
@@ -253,10 +226,6 @@ export function PartnershipTiersSection() {
             <ArrowRight className="size-4" aria-hidden="true" />
           </a>
         </article>
-
-        <p className="mt-8 text-center text-sm text-foreground">
-          * For Silver, Gold and Main partner, the value of software licences is agreed upon separately.
-        </p>
       </div>
     </section>
   )
