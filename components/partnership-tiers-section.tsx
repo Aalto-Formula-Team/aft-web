@@ -255,7 +255,7 @@ export function PartnershipTiersSection() {
         </article>
 
         <p className="mt-8 text-center text-sm text-foreground">
-          * For Silver, Gold and Main partner, the value of software licences is agreed separately.
+          * For Silver, Gold and Main partner, the value of software licences is agreed upon separately.
         </p>
       </div>
     </section>
