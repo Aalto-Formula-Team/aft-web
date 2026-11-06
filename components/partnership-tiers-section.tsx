@@ -1,4 +1,22 @@
-import { ArrowRight, Check } from 'lucide-react'
+import {
+  ArrowRight,
+  BadgeCheck,
+  CalendarDays,
+  CarFront,
+  Check,
+  Flag,
+  Globe,
+  KeyRound,
+  Megaphone,
+  MessageCircle,
+  Mic,
+  Paintbrush,
+  ShieldCheck,
+  Shirt,
+  Sparkles,
+  Users,
+  type LucideIcon,
+} from 'lucide-react'
 import { SectionHeading } from '@/components/section-heading'
 import { cn } from '@/lib/utils'
 
@@ -95,19 +113,44 @@ const mainExtras = [
   'Or tell us what would serve you best',
 ]
 
+// Picks an icon that matches each benefit line. First matching rule wins.
+const iconRules: [RegExp, LucideIcon][] = [
+  [/speak/i, Mic],
+  [/reveal/i, Sparkles],
+  [/organise/i, CalendarDays],
+  [/paint/i, Paintbrush],
+  [/borrow/i, KeyRound],
+  [/test track/i, Flag],
+  [/exclusiv/i, ShieldCheck],
+  [/powered by/i, Megaphone],
+  [/everywhere/i, BadgeCheck],
+  [/website/i, Globe],
+  [/car/i, CarFront],
+  [/recruit/i, Users],
+  [/t-shirt|hoodie|jacket|cap|merch/i, Shirt],
+  [/tell us/i, MessageCircle],
+]
+
+function iconFor(item: string): LucideIcon {
+  return iconRules.find(([re]) => re.test(item))?.[1] ?? Check
+}
+
 function List({ items, inverted }: { items: string[]; inverted?: boolean }) {
   return (
     <ul className="flex flex-col gap-3">
-      {items.map((item) => (
-        <li key={item} className="flex gap-3 text-sm leading-relaxed">
-          <Check
-            className={cn('mt-0.5 size-4 shrink-0', inverted ? 'text-white' : 'text-brand')}
-            strokeWidth={2.5}
-            aria-hidden="true"
-          />
-          <span>{item}</span>
-        </li>
-      ))}
+      {items.map((item) => {
+        const Icon = iconFor(item)
+        return (
+          <li key={item} className="flex gap-3 text-sm leading-relaxed">
+            <Icon
+              className={cn('mt-0.5 size-4 shrink-0', inverted ? 'text-white' : 'text-brand')}
+              strokeWidth={2}
+              aria-hidden="true"
+            />
+            <span>{item}</span>
+          </li>
+        )
+      })}
     </ul>
   )
 }
