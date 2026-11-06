@@ -34,6 +34,7 @@ export const events: TeamEvent[] = [
     type: 'AFT On The Grid',
     location: 'Aalto University, Otaniemi',
     description: 'Ossi Oikkarinen joins us to talk about his career and answer questions from students.',
+    article: ['Signup page coming soon'],
   },
   {
     slug: 'emma-kimilainen',
