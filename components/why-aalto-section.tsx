@@ -15,7 +15,7 @@ const points = [
   },
   {
     title: 'A startup on wheels',
-    body: 'A small team, a tight budget, a hard deadline and a product that has to work when the lights go green.',
+    body: 'A small team with a lot to do. Everyone works hard, learns fast and picks up whatever the car needs, often things they have never done before.',
   },
 ]
 
