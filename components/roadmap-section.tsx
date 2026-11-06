@@ -43,11 +43,22 @@ export function RoadmapSection() {
           </p>
         </div>
 
-        <ol className="relative mt-20 grid gap-12 before:absolute before:top-6 before:bottom-6 before:left-6 before:w-px before:bg-brand/25 lg:grid-cols-4 lg:gap-0 lg:before:inset-x-0 lg:before:bottom-auto lg:before:h-px lg:before:w-auto">
+        <ol className="mt-20 grid gap-12 lg:grid-cols-4 lg:gap-0">
           {milestones.map((m, i) => {
             const active = i === 0
             return (
               <li key={m.phase} className="relative flex gap-8 lg:flex-col lg:pr-10">
+                {i < milestones.length - 1 && (
+                  <span
+                    aria-hidden="true"
+                    className={
+                      // The step into Driverless is further away in time, so its connector is dotted.
+                      i === milestones.length - 2
+                        ? 'absolute top-12 -bottom-12 left-6 border-l-2 border-dotted border-brand/40 lg:top-6 lg:right-0 lg:bottom-auto lg:left-12 lg:border-t-2 lg:border-l-0'
+                        : 'absolute top-12 -bottom-12 left-6 w-px bg-brand/25 lg:top-6 lg:right-0 lg:bottom-auto lg:left-12 lg:h-px lg:w-auto'
+                    }
+                  />
+                )}
                 <div
                   className={
                     active
