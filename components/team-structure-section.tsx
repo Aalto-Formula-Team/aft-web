@@ -41,9 +41,6 @@ export function TeamStructureSection() {
               <Users className="size-6" aria-hidden="true" />
               <h3 className="text-xl font-bold uppercase tracking-wide">Our Teams</h3>
             </div>
-            <p className="max-w-xl text-sm leading-relaxed text-white/80">
-              Five sub-teams, each run by its own members and coordinated by the Board.
-            </p>
           </div>
           <ul className="grid sm:grid-cols-2 lg:grid-cols-5">
             {subTeams.map((team, i) => (
