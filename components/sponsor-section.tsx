@@ -4,7 +4,7 @@ import { SectionHeading } from '@/components/section-heading'
 const pillars = [
   {
     title: 'Future Talent',
-    body: 'Meet motivated students who are getting real, hands-on experience in engineering and business. They could be your next hires.',
+    body: 'Building a race car from scratch draws students who want more than a degree. They get real, hands-on experience in engineering and business, and they could be your next hires.',
     points: ['Recruit directly from our team', 'Host workshops or tech talks for our members', 'Get to know future engineers before they graduate'],
   },
   {
