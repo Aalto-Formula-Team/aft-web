@@ -5,7 +5,7 @@ const pillars = [
   {
     title: 'Future Talent',
     body: 'Meet motivated students who are getting real, hands-on experience in engineering and business. They could be your next hires.',
-    points: ['Recruit directly from our team', 'Host workshops or tech talks for our members', 'Bring your engineering challenges to students'],
+    points: ['Recruit directly from our team', 'Host workshops or tech talks for our members', 'Get to know future engineers before they graduate'],
   },
   {
     title: 'Put your tech on track',
