@@ -66,8 +66,7 @@ const tiers: Tier[] = [
       'Logo on car (big, choose your spot)',
       'Unlimited recruiting',
       'Invitation to our car reveal event',
-      'Possibility to organise other events with us',
-      'A team visit to your office with a talk about the car',
+      'Invitation to organise other events with us, where you get to meet the team',
     ],
     merch: [
       'T-shirts: front or sleeves',
