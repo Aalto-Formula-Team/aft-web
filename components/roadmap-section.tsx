@@ -1,4 +1,4 @@
-import { Flag, PencilRuler, Wrench } from 'lucide-react'
+import { Cpu, Flag, PencilRuler, Wrench } from 'lucide-react'
 import { SectionHeading } from '@/components/section-heading'
 
 const milestones = [
@@ -22,6 +22,12 @@ const milestones = [
     date: '08/2027 · FS Germany',
     items: ['Technical inspection', 'Static & dynamic events', 'Formula Student Germany, Hockenheimring'],
   },
+  {
+    phase: 'Driverless',
+    icon: Cpu,
+    status: 'Long-term goal',
+    items: ['Perception, planning & control', 'An autonomous system on our own car', 'The FS Germany Driverless Cup'],
+  },
 ]
 
 export function RoadmapSection() {
@@ -32,11 +38,12 @@ export function RoadmapSection() {
           <SectionHeading eyebrow="03 — Our Timeline" title="Design. Build. Race." />
           <p className="max-w-xl text-pretty text-lg leading-relaxed text-muted-foreground">
             Our plan from a blank page to the starting grid. Design starts in September 2026, and we&apos;re aiming
-            for our first race at Formula Student Germany in August 2027. Partners can get involved at every stage.
+            for our first race at Formula Student Germany in August 2027. Further ahead, we want to take on driverless
+            racing too. Partners can get involved at every stage.
           </p>
         </div>
 
-        <ol className="relative mt-20 grid gap-12 before:absolute before:top-6 before:bottom-6 before:left-6 before:w-px before:bg-brand/25 lg:grid-cols-3 lg:gap-0 lg:before:inset-x-0 lg:before:bottom-auto lg:before:h-px lg:before:w-auto">
+        <ol className="relative mt-20 grid gap-12 before:absolute before:top-6 before:bottom-6 before:left-6 before:w-px before:bg-brand/25 lg:grid-cols-4 lg:gap-0 lg:before:inset-x-0 lg:before:bottom-auto lg:before:h-px lg:before:w-auto">
           {milestones.map((m, i) => {
             const active = i === 0
             return (
