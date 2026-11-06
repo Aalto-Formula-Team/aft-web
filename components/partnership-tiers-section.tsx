@@ -63,7 +63,7 @@ const tiers: Tier[] = [
     benefits: [
       'Name and logo on website',
       'Logo on car (medium, choose your spot)',
-      'Limited access to recruiting',
+      'One recruiting post per season',
       'Invitation to our car reveal event',
     ],
     merch: ['T-shirts: medium logo on the back or sleeves', 'Hoodies: medium logo on the back'],
@@ -81,7 +81,7 @@ const tiers: Tier[] = [
     licenceNote: true,
     benefits: [
       'Name and logo on website',
-      'Logo on car (big, choose your spot)',
+      'Logo on car (big, first pick of spots after the Main partner)',
       'Unlimited recruiting',
       'Invitation to our car reveal event',
       'Invitation to organise other events with us',
