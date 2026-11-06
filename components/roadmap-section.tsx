@@ -51,13 +51,19 @@ export function RoadmapSection() {
                 {i < milestones.length - 1 && (
                   <span
                     aria-hidden="true"
-                    className={
-                      // The step into Driverless is further away in time, so its connector is dotted.
-                      i === milestones.length - 2
-                        ? 'absolute top-12 -bottom-12 left-6 border-l-2 border-dotted border-brand/40 lg:top-6 lg:right-0 lg:bottom-auto lg:left-12 lg:border-t-2 lg:border-l-0'
-                        : 'absolute top-12 -bottom-12 left-6 w-px bg-brand/25 lg:top-6 lg:right-0 lg:bottom-auto lg:left-12 lg:h-px lg:w-auto'
-                    }
-                  />
+                    className="absolute top-12 -bottom-12 left-6 flex flex-col lg:top-6 lg:right-0 lg:bottom-auto lg:left-12 lg:flex-row"
+                  >
+                    {i === milestones.length - 2 ? (
+                      // The step into Driverless is further away in time: solid ends, dashed middle.
+                      <>
+                        <span className="h-6 w-px shrink-0 bg-brand/40 lg:h-px lg:w-8" />
+                        <span className="flex-1 border-l border-dashed border-brand/40 lg:border-t lg:border-l-0" />
+                        <span className="h-6 w-px shrink-0 bg-brand/40 lg:h-px lg:w-8" />
+                      </>
+                    ) : (
+                      <span className="flex-1 w-px bg-brand/25 lg:h-px lg:w-auto" />
+                    )}
+                  </span>
                 )}
                 <div
                   className={
