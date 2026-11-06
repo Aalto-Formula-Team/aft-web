@@ -36,11 +36,9 @@ export function TeamStructureSection() {
         <SectionHeading eyebrow="02 — Team Structure" title="How we are organized." />
 
         <div className="mt-16 border border-border">
-          <div className="flex flex-col gap-4 border-b border-border bg-brand p-8 text-white sm:flex-row sm:items-center sm:justify-between">
-            <div className="flex items-center gap-4">
-              <Users className="size-6" aria-hidden="true" />
-              <h3 className="text-xl font-bold uppercase tracking-wide">Our Teams</h3>
-            </div>
+          <div className="flex items-center gap-4 border-b border-border bg-brand p-8 text-white">
+            <Users className="size-6" aria-hidden="true" />
+            <h3 className="text-xl font-bold uppercase tracking-wide">Our Teams</h3>
           </div>
           <ul className="grid sm:grid-cols-2 lg:grid-cols-5">
             {subTeams.map((team, i) => (
