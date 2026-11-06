@@ -31,7 +31,11 @@ const milestones: {
     phase: 'Race',
     icon: Flag,
     tag: { label: '08/2027 · FS Germany', style: 'date' },
-    items: ['Technical inspection', 'Static & dynamic events', 'Formula Student Germany, Hockenheimring'],
+    items: [
+      'Electric vehicle (EV) class',
+      'Technical inspection, static & dynamic events',
+      'Formula Student Germany, Hockenheimring',
+    ],
   },
   {
     phase: 'Driverless',
