@@ -5,13 +5,16 @@
  * The order in this list does not matter: the page sorts events by date and
  * moves them from "upcoming" to "past" automatically once the date has passed.
  *
+ * - slug:     the event's web address, e.g. 'emma-kimilainen' gives /events/emma-kimilainen
  * - date:     'YYYY-MM-DD'
  * - time:     optional, free text, e.g. '17:00–19:00'
  * - type:     short label shown above the title, e.g. 'AFT On The Grid' (our speaker series), 'Workshop'
  * - image:    optional, put the file in public/images/events/ and write '/images/events/<file>'
  * - link:     optional, e.g. a sign-up form or a LinkedIn post
+ * - article:  optional, the text on the event's own page, one string per paragraph
  */
 export type TeamEvent = {
+  slug: string
   title: string
   date: string
   time?: string
@@ -20,10 +23,12 @@ export type TeamEvent = {
   description: string
   image?: string
   link?: { label: string; href: string }
+  article?: string[]
 }
 
 export const events: TeamEvent[] = [
   {
+    slug: 'ossi-oikkarinen',
     title: 'Ossi Oikkarinen',
     date: '2026-11-27',
     type: 'AFT On The Grid',
@@ -31,6 +36,7 @@ export const events: TeamEvent[] = [
     description: 'Ossi Oikkarinen joins us to talk about his career and answer questions from students.',
   },
   {
+    slug: 'emma-kimilainen',
     title: 'Emma Kimiläinen',
     date: '2026-11-03',
     type: 'AFT On The Grid',
