@@ -135,18 +135,20 @@ function iconFor(item: string): LucideIcon {
   return iconRules.find(([re]) => re.test(item))?.[1] ?? Check
 }
 
-function List({ items, inverted }: { items: string[]; inverted?: boolean }) {
+function List({ items, inverted, plain }: { items: string[]; inverted?: boolean; plain?: boolean }) {
   return (
     <ul className="flex flex-col gap-3">
       {items.map((item) => {
         const Icon = iconFor(item)
         return (
           <li key={item} className="flex gap-3 text-sm leading-relaxed">
-            <Icon
-              className={cn('mt-0.5 size-4 shrink-0', inverted ? 'text-white' : 'text-brand')}
-              strokeWidth={2}
-              aria-hidden="true"
-            />
+            {!plain && (
+              <Icon
+                className={cn('mt-0.5 size-4 shrink-0', inverted ? 'text-white' : 'text-brand')}
+                strokeWidth={2}
+                aria-hidden="true"
+              />
+            )}
             <span>{item}</span>
           </li>
         )
@@ -193,10 +195,11 @@ export function PartnershipTiersSection() {
                   </div>
 
                   <div className="mt-8 border-t border-border pt-8">
-                    <p className="mb-4 font-display text-[0.65rem] uppercase tracking-[0.3em] text-brand">
+                    <p className="mb-4 flex items-center gap-3 font-display text-[0.65rem] uppercase tracking-[0.3em] text-brand">
+                      <Shirt className="size-4 shrink-0" strokeWidth={2} aria-hidden="true" />
                       Logo on team merch
                     </p>
-                    <List items={t.merch} />
+                    <List items={t.merch} plain />
                   </div>
                 </article>
                 <div
