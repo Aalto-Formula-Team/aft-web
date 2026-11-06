@@ -57,7 +57,7 @@ export function SiteHeader() {
             aria-current={pathname === '/join' ? 'page' : undefined}
             className="hidden whitespace-nowrap border border-white/50 px-5 py-3 text-xs font-bold uppercase tracking-[0.18em] text-white transition-colors hover:border-white hover:bg-white/10 aria-[current=page]:border-white sm:inline-block"
           >
-            Join Us
+            Apply
           </Link>
           <Link
             href="/for-companies#contact"
@@ -102,7 +102,7 @@ export function SiteHeader() {
               onClick={() => setOpen(false)}
               className="block border border-white px-5 py-4 text-center text-xs font-bold uppercase tracking-[0.18em] text-white"
             >
-              Join Us
+              Apply
             </Link>
             <Link
               href="/for-companies#contact"
