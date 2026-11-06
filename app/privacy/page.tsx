@@ -80,7 +80,7 @@ export default function PrivacyPage() {
         <PageHero
           eyebrow="Legal"
           title="Privacy policy."
-          intro="How we collect, use and protect your personal data when you visit our website and submit the membership form."
+          intro="How we collect, use and protect your personal data when you visit our website and submit our membership or contact forms."
         />
 
         <div className="mx-auto w-full max-w-3xl px-6 py-20 text-base leading-relaxed text-foreground lg:py-28">
@@ -93,7 +93,7 @@ export default function PrivacyPage() {
               This Privacy Policy explains how Aalto Formula Team (&quot;we&quot;, &quot;us&quot; or &quot;our&quot;)
               collects, uses and protects your personal data when you visit our website (
               <ExternalLink href="https://www.aaltoformulateam.fi/">https://www.aaltoformulateam.fi/</ExternalLink>)
-              and use our membership application form. We are committed to protecting your privacy and handling your
+              and use our membership application form or company contact form. We are committed to protecting your privacy and handling your
               data in accordance with the EU General Data Protection Regulation (GDPR).
             </p>
           </div>
@@ -127,7 +127,11 @@ export default function PrivacyPage() {
                 ))}
               </List>
               <p>
-                This is the only form on our website that collects personal data. Apart from the aggregated analytics
+                When you send an inquiry through the contact form on our For Companies page, we collect your name, the
+                name of your company (if you give one), your email address and the contents of your message.
+              </p>
+              <p>
+                These are the only forms on our website that collect personal data. Apart from the aggregated analytics
                 described in section 4, we do not collect any other personal data about you when you browse the site.
               </p>
             </Section>
@@ -145,6 +149,12 @@ export default function PrivacyPage() {
                 <strong>Legitimate Interest</strong> (Art. 6(1)(f) GDPR) in understanding the makeup of our
                 membership and planning the team&apos;s activities accordingly.
               </p>
+              <p>
+                We use the details you send through the contact form only to <strong>answer your inquiry</strong> and,
+                if it leads there, to discuss a partnership with you. The legal basis is our{' '}
+                <strong>Legitimate Interest</strong> (Art. 6(1)(f) GDPR) in replying to people who contact us, and
+                taking steps at your request before entering into an agreement (Art. 6(1)(b) GDPR).
+              </p>
             </Section>
 
             <Section title="4. How We Handle and Share Your Data">
@@ -159,6 +169,13 @@ export default function PrivacyPage() {
                 database or file storage of its own. Google acts as a Data Processor on our behalf. Google may process
                 data outside the European Economic Area, in which case the transfer is protected by safeguards such as
                 the EU Standard Contractual Clauses or the EU–US Data Privacy Framework.
+              </p>
+              <p>
+                <strong>Contact form inquiries.</strong> When you press &quot;Send Inquiry&quot;, our website emails
+                your message to our team inbox at <EmailLink /> using Resend, an email delivery service. Our website
+                does not store your inquiry in a database of its own. Resend acts as a Data Processor on our behalf and
+                is based in the United States; the transfer is protected by the EU Standard Contractual Clauses or the
+                EU–US Data Privacy Framework. Inquiries are only read by team members responsible for partnerships.
               </p>
               <p>
                 <strong>Website hosting and analytics.</strong> Our website is hosted on Vercel. Like any web host,
@@ -180,6 +197,10 @@ export default function PrivacyPage() {
                   months after we decide on your application, unless you give us explicit consent to keep it on file for
                   future opportunities.
                 </li>
+                <li>
+                  <strong>Contact form inquiries:</strong> Kept in our team inbox for as long as needed to handle your
+                  inquiry and any partnership that follows from it, and deleted on request.
+                </li>
               </List>
             </Section>
 
@@ -187,7 +208,8 @@ export default function PrivacyPage() {
               <p>
                 We implement appropriate technical and organizational security measures to protect your personal data
                 against unauthorized access, loss or alteration. Access to application data is restricted to
-                authorized team members only, and your submission is sent to Google over an encrypted connection.
+                authorized team members only, and form submissions are sent to Google and Resend over an encrypted
+                connection.
               </p>
             </Section>
 

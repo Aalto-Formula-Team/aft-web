@@ -39,6 +39,7 @@ function Field({
 export function ContactSection() {
   const [state, formAction, pending] = useActionState(submitInquiry, initialState)
   const e = state.errors ?? {}
+  const v = state.values ?? {}
 
   return (
     <section id="contact" className="scroll-mt-20 bg-brand py-24 text-white lg:py-32">
@@ -58,7 +59,7 @@ export function ContactSection() {
             <div>
               <dt className="font-display text-[0.65rem] uppercase tracking-[0.3em] text-white/60">Email</dt>
               <dd className="mt-1 text-lg font-semibold">
-                <a href="mailto:aaltoformulateam@gmail.com" className="underline-offset-4 hover:underline">
+                <a href="mailto:info@aaltoformulateam.fi" className="underline-offset-4 hover:underline">
                   info@aaltoformulateam.fi
                 </a>
               </dd>
@@ -106,6 +107,7 @@ export function ContactSection() {
                   autoComplete="name"
                   required
                   placeholder="Jane Virtanen"
+                  defaultValue={v.name}
                   aria-invalid={!!e.name}
                   aria-describedby={e.name ? 'name-error' : undefined}
                   className={inputClass}
@@ -117,6 +119,7 @@ export function ContactSection() {
                   name="company"
                   autoComplete="organization"
                   placeholder="Company Oy"
+                  defaultValue={v.company}
                   aria-invalid={!!e.company}
                   aria-describedby={e.company ? 'company-error' : undefined}
                   className={inputClass}
@@ -131,6 +134,7 @@ export function ContactSection() {
                 autoComplete="email"
                 required
                 placeholder="jane@company.fi"
+                defaultValue={v.email}
                 aria-invalid={!!e.email}
                 aria-describedby={e.email ? 'email-error' : undefined}
                 className={inputClass}
@@ -143,11 +147,17 @@ export function ContactSection() {
                 rows={4}
                 required
                 placeholder="Tell us about your partnership interests…"
+                defaultValue={v.message}
                 aria-invalid={!!e.message}
                 aria-describedby={e.message ? 'message-error' : undefined}
                 className={`${inputClass} resize-none`}
               />
             </Field>
+            {/* Honeypot: hidden from people, but bots fill it in, so the server drops those submissions */}
+            <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
+              <label htmlFor="website">Website</label>
+              <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
+            </div>
 
             {state.status === 'error' && (
               <p role="alert" className="text-sm text-orange-200">

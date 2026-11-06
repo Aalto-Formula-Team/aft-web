@@ -1,12 +1,19 @@
 'use server'
 
+import { Resend } from 'resend'
 import { MEMBERSHIP_FORM_URL, OTHER_OPTION, membershipQuestions } from '@/lib/membership'
+
+type InquiryField = 'name' | 'company' | 'email' | 'message'
 
 export type InquiryState = {
   status: 'idle' | 'success' | 'error'
   message?: string
-  errors?: Partial<Record<'name' | 'company' | 'email' | 'message', string>>
+  errors?: Partial<Record<InquiryField, string>>
+  // Echoed back on error so the form can be re-filled instead of cleared
+  values?: Partial<Record<InquiryField, string>>
 }
+
+const INQUIRY_TO_EMAIL = 'info@aaltoformulateam.fi'
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
@@ -16,6 +23,14 @@ export async function submitInquiry(_prev: InquiryState, formData: FormData): Pr
   const company = get('company')
   const email = get('email')
   const message = get('message')
+  const values = { name, company, email, message }
+  const success: InquiryState = {
+    status: 'success',
+    message: `Thanks, ${name}. Our Corporate Relations team will be in touch shortly.`,
+  }
+
+  // Honeypot: the "website" field is hidden from people, so only bots fill it in. Pretend it worked.
+  if (get('website')) return success
 
   const errors: InquiryState['errors'] = {}
   if (!name || name.length > 120) errors.name = 'Please enter your name.'
@@ -24,14 +39,34 @@ export async function submitInquiry(_prev: InquiryState, formData: FormData): Pr
   if (message.length < 10 || message.length > 4000) errors.message = 'Please write at least a short message.'
 
   if (Object.keys(errors).length > 0) {
-    return { status: 'error', message: 'Please check the highlighted fields.', errors }
+    return { status: 'error', message: 'Please check the highlighted fields.', errors, values }
   }
 
-  // Prototype: in production this would create a document in a Payload CMS "inquiries" collection.
-  return {
-    status: 'success',
-    message: `Thanks, ${name}. Our Corporate Relations team will be in touch shortly.`,
+  // Header values must stay on one line
+  const oneLine = (s: string) => s.replace(/[\r\n]+/g, ' ')
+
+  try {
+    const { RESEND_API_KEY, INQUIRY_FROM_EMAIL } = process.env
+    if (!RESEND_API_KEY || !INQUIRY_FROM_EMAIL) throw new Error('RESEND_API_KEY or INQUIRY_FROM_EMAIL is not set')
+
+    const { error } = await new Resend(RESEND_API_KEY).emails.send({
+      from: INQUIRY_FROM_EMAIL,
+      to: process.env.INQUIRY_TO_EMAIL || INQUIRY_TO_EMAIL,
+      replyTo: `${oneLine(name).replace(/[<>"]/g, '')} <${email}>`,
+      subject: `Partnership inquiry: ${oneLine(company || name)}`,
+      text: `Name: ${name}\nCompany: ${company || '-'}\nEmail: ${email}\n\n${message}`,
+    })
+    if (error) throw new Error(`Resend: ${error.message}`)
+  } catch (err) {
+    console.error('Inquiry submission failed', err)
+    return {
+      status: 'error',
+      message: `Something went wrong sending your inquiry. Please try again, or email us at ${INQUIRY_TO_EMAIL}.`,
+      values,
+    }
   }
+
+  return success
 }
 
 export type MembershipState = {
