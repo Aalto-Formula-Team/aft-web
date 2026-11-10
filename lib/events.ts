@@ -31,10 +31,11 @@ export const events: TeamEvent[] = [
   {
     slug: 'mika-salo',
     title: 'Mika Salo',
+    date: '2027-01-21',
     type: 'AFT On The Grid',
     location: 'Aalto University, Otaniemi',
     description: 'Former Formula 1 driver Mika Salo joins us to talk about his career and answer questions from students.',
-    article: ['Date and signup details coming soon.'],
+    article: ['Signup details coming soon.'],
   },
   {
     slug: 'ossi-oikkarinen',
