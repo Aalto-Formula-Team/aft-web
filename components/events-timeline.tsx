@@ -14,15 +14,16 @@ function EventCard({ event }: { event: TeamEvent }) {
   const [day, month, year] = event.date ? dateFormat.format(new Date(`${event.date}T00:00:00Z`)).split(' ') : []
 
   return (
-    <li className="relative grid gap-6 pb-12 pl-10 sm:grid-cols-[7rem_1fr] sm:gap-10 sm:pl-14">
+    <li className="relative grid gap-6 pb-12 pl-10 sm:grid-cols-[10rem_1fr] sm:gap-10 sm:pl-14">
       <span
         aria-hidden="true"
         className="absolute left-0 top-1 size-4 -translate-x-1/2 border-2 border-brand bg-brand"
       />
       {event.date ? (
         <time dateTime={event.date} className="font-display text-brand">
-          <span className="block text-4xl font-bold leading-none">{day}</span>
-          <span className="mt-1 block text-4xl font-bold uppercase leading-none">{month}</span>
+          <span className="block whitespace-nowrap text-4xl font-bold uppercase leading-none">
+            {day} {month}
+          </span>
           <span className="mt-2 block text-xs uppercase tracking-[0.25em]">{year}</span>
         </time>
       ) : (
