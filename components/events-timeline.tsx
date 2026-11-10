@@ -2,7 +2,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Clock, MapPin } from 'lucide-react'
 import { events, type TeamEvent } from '@/lib/events'
-import { cn } from '@/lib/utils'
 
 const dateFormat = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' })
 
@@ -11,24 +10,20 @@ function todayIso() {
   return new Intl.DateTimeFormat('sv-SE', { timeZone: 'Europe/Helsinki' }).format(new Date())
 }
 
-function EventCard({ event, past }: { event: TeamEvent; past: boolean }) {
+function EventCard({ event }: { event: TeamEvent }) {
   const [day, month, year] = event.date ? dateFormat.format(new Date(`${event.date}T00:00:00Z`)).split(' ') : []
 
   return (
     <li className="relative grid gap-6 pb-12 pl-10 sm:grid-cols-[7rem_1fr] sm:gap-10 sm:pl-14">
       <span
         aria-hidden="true"
-        className={cn(
-          'absolute left-0 top-1 size-4 -translate-x-1/2 border-2',
-          past ? 'border-border bg-muted' : 'border-brand bg-brand',
-        )}
+        className="absolute left-0 top-1 size-4 -translate-x-1/2 border-2 border-brand bg-brand"
       />
       {event.date ? (
-        <time dateTime={event.date} className={cn('font-display', past ? 'text-muted-foreground' : 'text-brand')}>
+        <time dateTime={event.date} className="font-display text-brand">
           <span className="block text-4xl font-bold leading-none">{day}</span>
-          <span className="mt-2 block text-xs uppercase tracking-[0.25em]">
-            {month} {year}
-          </span>
+          <span className="mt-1 block text-4xl font-bold uppercase leading-none">{month}</span>
+          <span className="mt-2 block text-xs uppercase tracking-[0.25em]">{year}</span>
         </time>
       ) : (
         <p className="font-display text-brand">
@@ -38,10 +33,7 @@ function EventCard({ event, past }: { event: TeamEvent; past: boolean }) {
       )}
 
       <article
-        className={cn(
-          'group relative flex flex-col overflow-hidden border bg-background transition-colors hover:border-brand sm:flex-row',
-          past ? 'border-border' : 'border-brand',
-        )}
+        className="group relative flex flex-col overflow-hidden border border-brand bg-background transition-colors sm:flex-row"
       >
         {event.image && (
           <div className="relative aspect-[4/3] shrink-0 bg-muted sm:aspect-auto sm:w-64">
@@ -50,7 +42,7 @@ function EventCard({ event, past }: { event: TeamEvent; past: boolean }) {
               alt=""
               fill
               sizes="(min-width: 640px) 16rem, 100vw"
-              className={cn('object-cover', past && 'grayscale-[40%]')}
+              className="object-cover"
             />
           </div>
         )}
@@ -103,6 +95,55 @@ function EventCard({ event, past }: { event: TeamEvent; past: boolean }) {
   )
 }
 
+const pastDateFormat = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' })
+
+function PastEventCard({ event }: { event: TeamEvent }) {
+  return (
+    <li>
+      <article className="group relative flex h-full flex-col overflow-hidden border border-border bg-background transition-colors hover:border-brand">
+        {event.image && (
+          <div className="relative aspect-[16/10] bg-muted">
+            <Image
+              src={event.image}
+              alt=""
+              fill
+              sizes="(min-width: 640px) 28rem, 100vw"
+              className="object-cover grayscale-[40%] transition group-hover:grayscale-0"
+            />
+          </div>
+        )}
+        <div className="flex flex-1 flex-col p-6 sm:p-8">
+          <p className="font-display text-[0.65rem] uppercase tracking-[0.3em] text-brand">
+            {event.type}
+            {event.date && (
+              <>
+                <span aria-hidden="true" className="mx-2 text-muted-foreground">/</span>
+                <time dateTime={event.date} className="text-muted-foreground">
+                  {pastDateFormat.format(new Date(`${event.date}T00:00:00Z`))}
+                </time>
+              </>
+            )}
+          </p>
+          <h3 className="mt-3 text-2xl font-extrabold uppercase tracking-tight">
+            {/* The ::after covers the whole card, so clicking anywhere on it opens the event. */}
+            <Link href={`/events/${event.slug}`} className="transition-colors after:absolute after:inset-0 group-hover:text-brand">
+              {event.title}
+            </Link>
+          </h3>
+          <p className="mt-4 text-pretty leading-relaxed text-muted-foreground">{event.description}</p>
+          <span
+            aria-hidden="true"
+            className="mt-auto inline-flex items-center gap-2 self-start pt-6 text-sm font-bold uppercase tracking-[0.18em] text-brand group-hover:underline"
+          >
+            Read more
+            <ArrowRight className="size-4" />
+          </span>
+        </div>
+      </article>
+    </li>
+  )
+}
+
 export function EventsTimeline() {
   const today = todayIso()
   // Upcoming: the next event first, events without a date yet at the end.
@@ -124,7 +165,7 @@ export function EventsTimeline() {
           {upcoming.length > 0 ? (
             <ol>
               {upcoming.map((e) => (
-                <EventCard key={e.slug} event={e} past={false} />
+                <EventCard key={e.slug} event={e} />
               ))}
             </ol>
           ) : (
@@ -132,24 +173,21 @@ export function EventsTimeline() {
               New events are coming soon. Follow us on Instagram and LinkedIn to hear first.
             </p>
           )}
-
-          {past.length > 0 && (
-            <>
-              <div className="relative mb-12 flex items-center gap-4 pl-10 sm:pl-14" role="separator">
-                <span aria-hidden="true" className="absolute left-0 h-px w-6 -translate-x-1/2 bg-brand" />
-                <span className="font-display text-xs uppercase tracking-[0.35em] text-muted-foreground">
-                  Past events
-                </span>
-                <span aria-hidden="true" className="h-px flex-1 border-t border-dashed border-border" />
-              </div>
-              <ol>
-                {past.map((e) => (
-                  <EventCard key={e.slug} event={e} past />
-                ))}
-              </ol>
-            </>
-          )}
         </div>
+
+        {past.length > 0 && (
+          <div className="mt-12">
+            <div className="mb-10 flex items-center gap-4" role="separator">
+              <span className="font-display text-xs uppercase tracking-[0.35em] text-muted-foreground">Past events</span>
+              <span aria-hidden="true" className="h-px flex-1 border-t border-dashed border-border" />
+            </div>
+            <ul className="grid gap-6 sm:grid-cols-2">
+              {past.map((e) => (
+                <PastEventCard key={e.slug} event={e} />
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
     </section>
   )
