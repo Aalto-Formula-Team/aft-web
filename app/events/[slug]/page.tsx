@@ -44,7 +44,11 @@ export default async function EventPage({ params }: Props) {
             <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm font-semibold">
               <li className="flex items-center gap-2">
                 <CalendarDays className="size-4 text-brand" aria-hidden="true" />
-                <time dateTime={event.date}>{dateFormat.format(new Date(`${event.date}T00:00:00Z`))}</time>
+                {event.date ? (
+                  <time dateTime={event.date}>{dateFormat.format(new Date(`${event.date}T00:00:00Z`))}</time>
+                ) : (
+                  'Date TBD'
+                )}
               </li>
               {event.time && (
                 <li className="flex items-center gap-2">

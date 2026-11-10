@@ -6,7 +6,8 @@
  * moves them from "upcoming" to "past" automatically once the date has passed.
  *
  * - slug:     the event's web address, e.g. 'emma-kimilainen' gives /events/emma-kimilainen
- * - date:     'YYYY-MM-DD'
+ * - date:     'YYYY-MM-DD', or leave it out if the date is not set yet (shows as 'TBD'
+ *             at the top of the upcoming events)
  * - time:     optional, free text, e.g. '17:00–19:00'
  * - type:     short label shown above the title, e.g. 'AFT On The Grid' (our speaker series), 'Workshop'
  * - image:    optional, put the file in public/images/events/ and write '/images/events/<file>'
@@ -16,7 +17,7 @@
 export type TeamEvent = {
   slug: string
   title: string
-  date: string
+  date?: string
   time?: string
   type: string
   location?: string
@@ -27,6 +28,14 @@ export type TeamEvent = {
 }
 
 export const events: TeamEvent[] = [
+  {
+    slug: 'mika-salo',
+    title: 'Mika Salo',
+    type: 'AFT On The Grid',
+    location: 'Aalto University, Otaniemi',
+    description: 'Former Formula 1 driver Mika Salo joins us to talk about his career and answer questions from students.',
+    article: ['Date and signup details coming soon.'],
+  },
   {
     slug: 'ossi-oikkarinen',
     title: 'Ossi Oikkarinen',
