@@ -7,7 +7,7 @@
  *
  * - slug:     the event's web address, e.g. 'emma-kimilainen' gives /events/emma-kimilainen
  * - date:     'YYYY-MM-DD', or leave it out if the date is not set yet (shows as 'TBD'
- *             at the top of the upcoming events)
+ *             at the end of the upcoming events)
  * - time:     optional, free text, e.g. '17:00–19:00'
  * - type:     short label shown above the title, e.g. 'AFT On The Grid' (our speaker series), 'Workshop'
  * - image:    optional, put the file in public/images/events/ and write '/images/events/<file>'

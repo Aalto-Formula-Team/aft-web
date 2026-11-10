@@ -105,10 +105,14 @@ function EventCard({ event, past }: { event: TeamEvent; past: boolean }) {
 
 export function EventsTimeline() {
   const today = todayIso()
-  // One continuous timeline, newest date at the top. Events without a date yet are upcoming and go first.
-  const sorted = [...events].sort((a, b) => (b.date ?? '9999').localeCompare(a.date ?? '9999'))
-  const upcoming = sorted.filter((e) => !e.date || e.date >= today)
-  const past = sorted.filter((e) => e.date && e.date < today)
+  // Upcoming: the next event first, events without a date yet at the end.
+  // Past: the most recent event first.
+  const upcoming = events
+    .filter((e) => !e.date || e.date >= today)
+    .sort((a, b) => (a.date ?? '9999').localeCompare(b.date ?? '9999'))
+  const past = events
+    .filter((e) => e.date && e.date < today)
+    .sort((a, b) => (b.date ?? '').localeCompare(a.date ?? ''))
 
   return (
     <section id="events" className="bg-background py-24 lg:py-32">
