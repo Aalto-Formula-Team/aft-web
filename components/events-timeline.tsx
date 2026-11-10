@@ -12,7 +12,7 @@ function todayIso() {
 }
 
 function EventCard({ event, past }: { event: TeamEvent; past: boolean }) {
-  const [day, month, year] = dateFormat.format(new Date(`${event.date}T00:00:00Z`)).split(' ')
+  const [day, month, year] = event.date ? dateFormat.format(new Date(`${event.date}T00:00:00Z`)).split(' ') : []
 
   return (
     <li className="relative grid gap-6 pb-12 pl-10 sm:grid-cols-[7rem_1fr] sm:gap-10 sm:pl-14">
@@ -23,12 +23,19 @@ function EventCard({ event, past }: { event: TeamEvent; past: boolean }) {
           past ? 'border-border bg-muted' : 'border-brand bg-brand',
         )}
       />
-      <time dateTime={event.date} className={cn('font-display', past ? 'text-muted-foreground' : 'text-brand')}>
-        <span className="block text-4xl font-bold leading-none">{day}</span>
-        <span className="mt-2 block text-xs uppercase tracking-[0.25em]">
-          {month} {year}
-        </span>
-      </time>
+      {event.date ? (
+        <time dateTime={event.date} className={cn('font-display', past ? 'text-muted-foreground' : 'text-brand')}>
+          <span className="block text-4xl font-bold leading-none">{day}</span>
+          <span className="mt-2 block text-xs uppercase tracking-[0.25em]">
+            {month} {year}
+          </span>
+        </time>
+      ) : (
+        <p className="font-display text-brand">
+          <span className="block text-4xl font-bold leading-none">TBD</span>
+          <span className="mt-2 block text-xs uppercase tracking-[0.25em]">Date coming soon</span>
+        </p>
+      )}
 
       <article
         className={cn(
@@ -98,10 +105,10 @@ function EventCard({ event, past }: { event: TeamEvent; past: boolean }) {
 
 export function EventsTimeline() {
   const today = todayIso()
-  // One continuous timeline, newest date at the top.
-  const sorted = [...events].sort((a, b) => b.date.localeCompare(a.date))
-  const upcoming = sorted.filter((e) => e.date >= today)
-  const past = sorted.filter((e) => e.date < today)
+  // One continuous timeline, newest date at the top. Events without a date yet are upcoming and go first.
+  const sorted = [...events].sort((a, b) => (b.date ?? '9999').localeCompare(a.date ?? '9999'))
+  const upcoming = sorted.filter((e) => !e.date || e.date >= today)
+  const past = sorted.filter((e) => e.date && e.date < today)
 
   return (
     <section id="events" className="bg-background py-24 lg:py-32">
@@ -113,7 +120,7 @@ export function EventsTimeline() {
           {upcoming.length > 0 ? (
             <ol>
               {upcoming.map((e) => (
-                <EventCard key={`${e.date}-${e.title}`} event={e} past={false} />
+                <EventCard key={e.slug} event={e} past={false} />
               ))}
             </ol>
           ) : (
@@ -133,7 +140,7 @@ export function EventsTimeline() {
               </div>
               <ol>
                 {past.map((e) => (
-                  <EventCard key={`${e.date}-${e.title}`} event={e} past />
+                  <EventCard key={e.slug} event={e} past />
                 ))}
               </ol>
             </>
