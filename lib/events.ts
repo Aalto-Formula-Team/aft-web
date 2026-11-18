@@ -38,13 +38,20 @@ export const events: TeamEvent[] = [
     article: ['Signup details coming soon.'],
   },
   {
-    slug: 'ossi-oikkarinen',
-    title: 'Ossi Oikkarinen',
+    slug: 'ossi-oikarinen',
+    title: 'Ossi Oikarinen',
     date: '2026-11-27',
+    time: '12:00–14:00',
     type: 'AFT On The Grid',
-    location: 'Aalto University, Otaniemi',
-    description: 'Ossi Oikkarinen joins us to talk about his career and answer questions from students.',
-    article: ['Signup page coming soon'],
+    location: 'Design Factory, Puumiehenkuja 5A, Espoo',
+    description:
+      'A fireside chat with Ossi Oikarinen, a Finnish motorsport engineer with a 14-year career in Formula 1 at Arrows, Toyota, BMW Sauber and Ferrari.',
+    link: { label: 'Register', href: 'https://luma.com/8lw0sqis?tk=ZC7tBU' },
+    article: [
+      'What does it take to engineer a Formula 1 car, and how do data, technology and teamwork come together to deliver performance at the highest level of motorsport? Join us for a fireside chat with Ossi Oikarinen, a Finnish motorsport engineer whose 14-year career in Formula 1 includes Arrows, Toyota, BMW Sauber and Ferrari.',
+      'From race engineering and vehicle development to testing, data analysis and performance optimisation, we will look at what happens behind the scenes in motorsport and how engineering decisions can make the difference between winning and losing. Ossi will also share his experience of working at the top level of racing, the challenges of the industry and the path that took him from Finland to Formula 1.',
+      'The session includes time for your own questions. Whether you study engineering, follow motorsport, or are interested in vehicle development, data analytics or the teamwork behind Formula 1, this is an opportunity to exchange ideas and gain new perspectives.',
+    ],
   },
   {
     slug: 'emma-kimilainen',

@@ -72,17 +72,6 @@ function EventCard({ event }: { event: TeamEvent }) {
               )}
             </ul>
           )}
-          {event.link && (
-            <a
-              href={event.link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative z-10 mt-6 inline-flex items-center gap-2 self-start text-sm font-bold uppercase tracking-[0.18em] text-brand hover:underline"
-            >
-              {event.link.label}
-              <ArrowRight className="size-4" aria-hidden="true" />
-            </a>
-          )}
           <span
             aria-hidden="true"
             className="mt-6 inline-flex items-center gap-2 self-start text-sm font-bold uppercase tracking-[0.18em] text-brand group-hover:underline"

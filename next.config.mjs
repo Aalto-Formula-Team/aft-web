@@ -7,7 +7,11 @@ const nextConfig = {
     unoptimized: true,
   },
   async redirects() {
-    return [{ source: '/contact', destination: '/for-companies', permanent: true }]
+    return [
+      { source: '/contact', destination: '/for-companies', permanent: true },
+      // Old, misspelled event address
+      { source: '/events/ossi-oikkarinen', destination: '/events/ossi-oikarinen', permanent: true },
+    ]
   },
 }
 
