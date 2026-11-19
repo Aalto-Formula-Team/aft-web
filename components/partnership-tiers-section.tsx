@@ -124,6 +124,9 @@ function iconFor(item: string): LucideIcon {
   return iconRules.find(([re]) => re.test(item))?.[1] ?? Check
 }
 
+// Gold accent for the Main partner card, same tone as the pitch deck.
+const MAIN_GOLD = '#d9b54a'
+
 function List({ items, inverted, plain }: { items: string[]; inverted?: boolean; plain?: boolean }) {
   return (
     <ul className="flex flex-col gap-3">
@@ -133,7 +136,8 @@ function List({ items, inverted, plain }: { items: string[]; inverted?: boolean;
           <li key={item} className="flex gap-3 text-sm leading-relaxed">
             {!plain && (
               <Icon
-                className={cn('mt-0.5 size-4 shrink-0', inverted ? 'text-white' : 'text-brand')}
+                className={cn('mt-0.5 size-4 shrink-0', !inverted && 'text-brand')}
+                style={inverted ? { color: MAIN_GOLD } : undefined}
                 strokeWidth={2}
                 aria-hidden="true"
               />
@@ -198,17 +202,20 @@ export function PartnershipTiersSection() {
           <div aria-hidden="true" className="-mx-3 hidden h-5 rounded-t bg-brand-deep lg:block" />
         </div>
 
-        <p className="mx-auto mt-8 max-w-2xl text-center text-base">
+        <p className="mx-auto mt-8 max-w-3xl text-center text-base">
           Join at Silver or above in our first season and become a{' '}
-          <span className="font-bold text-brand">Founding partner</span>, for as long as our partnership continues.
+          <span className="font-bold text-brand">Founding partner</span>, a title you keep for as long as our partnership
+          continues.
         </p>
         <p className="mt-4 text-center text-sm font-semibold">Smaller contributions are also welcome, contact us.</p>
 
-        <article className="mt-16 bg-foreground p-8 text-white sm:p-12">
+        <article className="mt-16 bg-foreground p-8 text-white sm:p-12" style={{ borderTop: `6px solid ${MAIN_GOLD}` }}>
           <div className="flex flex-col justify-between gap-6 border-b border-white/20 pb-10 lg:flex-row lg:items-end">
             <div>
               <p className="font-display text-xs uppercase tracking-[0.35em] text-white/60">Only one available</p>
-              <h3 className="mt-4 text-4xl font-extrabold uppercase tracking-tight sm:text-5xl">Main partner</h3>
+              <h3 className="mt-4 text-4xl font-extrabold uppercase tracking-tight sm:text-5xl" style={{ color: MAIN_GOLD }}>
+                Main partner
+              </h3>
             </div>
           </div>
 
