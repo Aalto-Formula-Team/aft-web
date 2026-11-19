@@ -49,7 +49,7 @@ export function SponsorSection() {
 
         <div className="mt-12 flex flex-col items-start justify-between gap-6 border-l-2 border-brand pl-6 sm:flex-row sm:items-center">
           <p className="max-w-xl text-lg font-semibold">
-            As a founding partner, you&apos;re with us from the very first bolt. Let&apos;s build something together.
+            Join in our first season and become a Founding partner, a title you keep for as long as our partnership continues.
           </p>
           <a
             href="#contact"
