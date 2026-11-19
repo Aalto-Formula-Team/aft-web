@@ -47,7 +47,7 @@ export function ContactSection() {
         <div>
           <SectionHeading eyebrow="04 — Contact" title="Start the conversation." tone="light" />
           <p className="mt-8 max-w-md text-pretty text-lg leading-relaxed text-white/80">
-            Interested in becoming a founding partner? Tell us a little about your organization and we&apos;ll get back
+            Interested in partnering with us? Tell us a little about your organization and we&apos;ll get back
             to you with our partnership deck.
           </p>
           <dl className="mt-12 flex flex-col gap-6 border-t border-white/20 pt-8">

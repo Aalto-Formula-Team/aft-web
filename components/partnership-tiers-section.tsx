@@ -202,11 +202,15 @@ export function PartnershipTiersSection() {
           <div aria-hidden="true" className="-mx-3 hidden h-5 rounded-t bg-brand-deep lg:block" />
         </div>
 
-        <p className="mx-auto mt-8 max-w-3xl text-center text-base">
-          Join at Silver or above in our first season and become a{' '}
-          <span className="font-bold text-brand">Founding partner</span>, a title you keep for as long as our partnership
-          continues.
-        </p>
+        <div className="mx-auto mt-12 max-w-3xl border-2 border-brand px-6 py-8 text-center sm:px-10">
+          <p className="font-display text-xs uppercase tracking-[0.35em] text-brand">First season only</p>
+          <h3 className="mt-3 text-3xl font-extrabold uppercase tracking-tight sm:text-4xl">Founding partner</h3>
+          <p className="mx-auto mt-4 max-w-2xl text-pretty text-lg leading-relaxed">
+            Join at Silver or above in our first season and become a{' '}
+            <span className="font-bold text-brand">Founding partner</span>, a title you keep for as long as our
+            partnership continues.
+          </p>
+        </div>
 
         <article className="mt-16 bg-foreground p-8 text-white sm:p-12" style={{ borderTop: `6px solid ${MAIN_GOLD}` }}>
           <div className="flex flex-col justify-between gap-6 border-b border-white/20 pb-10 lg:flex-row lg:items-end">
