@@ -198,7 +198,11 @@ export function PartnershipTiersSection() {
           <div aria-hidden="true" className="-mx-3 hidden h-5 rounded-t bg-brand-deep lg:block" />
         </div>
 
-        <p className="mt-8 text-center text-sm font-semibold">Smaller contributions are also welcome, contact us.</p>
+        <p className="mx-auto mt-8 max-w-2xl text-center text-base">
+          Join at Silver or above in our first season and become a{' '}
+          <span className="font-bold text-brand">Founding partner</span>, for as long as our partnership continues.
+        </p>
+        <p className="mt-4 text-center text-sm font-semibold">Smaller contributions are also welcome, contact us.</p>
 
         <article className="mt-16 bg-foreground p-8 text-white sm:p-12">
           <div className="flex flex-col justify-between gap-6 border-b border-white/20 pb-10 lg:flex-row lg:items-end">
