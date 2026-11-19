@@ -207,7 +207,6 @@ export function PartnershipTiersSection() {
           <span className="font-bold text-brand">Founding partner</span>, a title you keep for as long as our partnership
           continues.
         </p>
-        <p className="mt-4 text-center text-sm font-semibold">Smaller contributions are also welcome, contact us.</p>
 
         <article className="mt-16 bg-foreground p-8 text-white sm:p-12" style={{ borderTop: `6px solid ${MAIN_GOLD}` }}>
           <div className="flex flex-col justify-between gap-6 border-b border-white/20 pb-10 lg:flex-row lg:items-end">
